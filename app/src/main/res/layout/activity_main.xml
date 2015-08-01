@@ -24,13 +24,15 @@
             android:id="@+id/english_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="English" />
+            android:text="English"
+            android:onClick="toInfo"/>
 
         <Button
             android:id="@+id/spanish_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Español" />
+            android:text="Español"
+            android:onClick="toInfo"/>
 
     </LinearLayout>
 </LinearLayout>
