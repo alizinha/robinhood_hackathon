@@ -7,22 +7,22 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="alizinha.c4q.nyc.onemorechance.Info">
+    tools:context="alizinha.c4q.nyc.onemorechance.Info"
+    android:background="#33D633">
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:hint="Name"
-        android:id="@+id/nameID"/>
+        android:textColorHint="#ffffff"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:hint="Zip Code"
-        android:id="@+id/zipcodeID"/>
-
+        android:textColorHint="#ffffff"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -48,13 +48,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:hint="Age" />
+            android:hint="Age"
+            android:textColorHint="#ffffff"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:hint="Citizenship Status" />
+            android:hint="Citizenship Status"
+            android:textColorHint="#ffffff"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -65,17 +67,21 @@
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Undocumented" />
+                android:text="Undocumented"
+                android:textColor="#ffffff"
+                />
 
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Immigrants" />
+                android:text="Immigrants"
+                android:textColor="#ffffff"/>
 
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Refugees" />
+                android:text="Refugees"
+                android:textColor="#ffffff"/>
 
         </LinearLayout>
 
