@@ -1,19 +1,68 @@
 package alizinha.c4q.nyc.onemorechance;
 
+import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
+public class MainActivity extends Activity {
+    TextView englishTextView, spanishTextView, nameTextView;
+    String name;
 
-public class MainActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        englishTextView = (TextView) findViewById(R.id.english_button);
+        spanishTextView = (TextView) findViewById(R.id.spanish_button);
+        nameTextView = (TextView) findViewById(R.id.setNameID);
+
+        nameTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Info.class);
+                startActivity(intent);
+
+            }
+        });
+
+        englishTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Info.class);
+                startActivity(intent);
+
+            }
+        });
+        spanishTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Info.class);
+                startActivity(intent);
+
+            }
+        });
+
+        try {
+            SharedPreferences settings;// = MainActivity.this.getSharedPreferences("PREFS_NAME", 0);
+            settings = MainActivity.this.getSharedPreferences("PREFS_NAME", 0);
+            name = settings.getString("name", "");
+            //button.setVisibility(View.VISIBLE);
+            nameTextView.setText(name);
+            if (nameTextView.getText().toString().equals("")) {
+                nameTextView.setVisibility(View.GONE);
+            }
+
+        } catch (Exception e) {
+            nameTextView.setVisibility(View.GONE);
+        }
     }
 
 
@@ -38,8 +87,14 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
-    public void toInfo (View view){
+
+    public void toInfo(View view) {
         Intent intent = new Intent(MainActivity.this, Info.class);
+        startActivity(intent);
+    }
+
+    public void StraightToResults(View view) {
+        Intent intent = new Intent(MainActivity.this, SearchResults.class);
         startActivity(intent);
     }
 }
