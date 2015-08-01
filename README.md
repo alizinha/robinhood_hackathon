@@ -1,10 +1,17 @@
-# Access Code 2.1 -- Robin Hood Hackathon
-## Aug 1 - Aug 3  
+# Access Code 2.1 -- Robin Hood Hackathon: The "One More Chance" App
+## Created by Team Bilingual (a.k.a. Ray Acevedo, Allison Bojarski, Elvis Boves, Anthony McBride, & Jorge Reina)
  
-This is the Access Code 2.1 Repo for the Robin Hood Hackathon. Please fork this repo for your own projects this weekend so we can easily find them on Monday.  (Note: this was initialized with a .gitignore that you may need to change).  
+The "One More Chance" app is a bilingual (English/Spanish) portal to help NYC-based Latina/o youth pursue both financial stability and educational opportunity. We're powered by the [Aunt Bertha API](https://www.auntbertha.com/developers).
+
+###Features:
+* Allows the user to search for local financial and educational services
+* Retains user's info (name, age, location by zipcode, etc.) for future searches to return specific, tailored search results
+* Attractive UI that both visually and textually appeals to a youthful Latina/o audience
+
+
+
   
-Taking pictures? Tweeting? Find us!  
-We are everywhere! [@C4Qnyc](https://twitter.com/c4qnyc), [@RobinHoodNYC](https://twitter.com/RobinHoodNYC), [@AuntBertha](https://twitter.com/AuntBertha), [@SingleStop](https://twitter.com/SingleStop)  
+[@C4Qnyc](https://twitter.com/c4qnyc), [@RobinHoodNYC](https://twitter.com/RobinHoodNYC), [@AuntBertha](https://twitter.com/AuntBertha), [@SingleStop](https://twitter.com/SingleStop)  
 We're also [#RHfunded](https://twitter.com/hashtag/RHFunded?src=hash) [#QueensTech](https://twitter.com/hashtag/QueensTech?src=hash) [#AndroidDev](https://twitter.com/hashtag/AndroidDev?src=hash) [#Android](https://twitter.com/hashtag/Android?src=hash) [#hack4good]() [#hackathon](https://twitter.com/hashtag/hack4good?src=hash)
 
 
