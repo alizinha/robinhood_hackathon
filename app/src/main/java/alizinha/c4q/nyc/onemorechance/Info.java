@@ -7,14 +7,16 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
 
 public class Info extends ActionBarActivity {
     LinearLayout advancedSearchLayout;
-    EditText nameEditText, zipcodeEditText;
-    String nameString, zipcodeString;
+    EditText nameEditText, zipcodeEditText, age;
+    String nameString, zipcodeString, ageString, immigrationStatus;
+    CheckBox undocumented, immigrants, refugee, latinoYes, latinoNo, english, spanish, both;
 
 
     @Override
@@ -25,13 +27,22 @@ public class Info extends ActionBarActivity {
         initializeViews();
 
         advancedSearchLayout.setVisibility(View.GONE);
-        
+
     }
 
     public void initializeViews() {
         advancedSearchLayout = (LinearLayout) findViewById(R.id.advancedSearchLayoutID);
         nameEditText = (EditText) findViewById(R.id.nameID);
         zipcodeEditText = (EditText) findViewById(R.id.zipcodeID);
+        age = (EditText) findViewById(R.id.ageID);
+        undocumented = (CheckBox) findViewById(R.id.undocumentedID);
+        immigrants = (CheckBox) findViewById(R.id.immigrantsID);
+        refugee = (CheckBox) findViewById(R.id.refugeeID);
+        latinoYes = (CheckBox) findViewById(R.id.latinoYesID);
+        latinoNo = (CheckBox) findViewById(R.id.latinoNoID);
+        english = (CheckBox) findViewById(R.id.englishID);
+        spanish = (CheckBox) findViewById(R.id.spanishID);
+        both = (CheckBox) findViewById(R.id.bothID);
     }
 
     @Override
@@ -59,6 +70,7 @@ public class Info extends ActionBarActivity {
     public void toResults(View view) {
         nameString = nameEditText.getText().toString();
         zipcodeString = zipcodeEditText.getText().toString();
+        ageString = age.getText().toString();
 
         SharedPreferences info;
         info = Info.this.getSharedPreferences("PREFS_NAME", 0);
@@ -66,6 +78,20 @@ public class Info extends ActionBarActivity {
 
         editor.putString("name", nameString);
         editor.putString("zipcode", zipcodeString);
+        editor.putString("age", ageString);
+
+
+        if(undocumented.isChecked() == true){
+            immigrationStatus = "undocumented";
+        }
+        else if (immigrants.isChecked() == true){
+            immigrationStatus = "immigrant";
+        }
+        else {
+            immigrationStatus = "refugee";
+        }
+
+        editor.putString("immigrationStatus", immigrationStatus);
         editor.commit();
 
         Intent intent = new Intent(Info.this, SearchResults.class);

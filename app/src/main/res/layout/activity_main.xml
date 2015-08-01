@@ -33,6 +33,11 @@
             android:layout_height="wrap_content"
             android:text="Español"
             android:onClick="toInfo"/>
+        <Button
+            android:id="@+id/setNameID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="StraightToResults"/>
 
     </LinearLayout>
 </LinearLayout>

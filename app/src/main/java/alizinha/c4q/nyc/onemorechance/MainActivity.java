@@ -1,21 +1,42 @@
 package alizinha.c4q.nyc.onemorechance;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 
 
 public class MainActivity extends ActionBarActivity {
+    Button nameButton;
+    String name;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
 
+        nameButton = (Button) findViewById(R.id.setNameID);
+
+        try {
+            SharedPreferences settings;// = MainActivity.this.getSharedPreferences("PREFS_NAME", 0);
+            settings = MainActivity.this.getSharedPreferences("PREFS_NAME", 0);
+            name = settings.getString("name", "");
+            //button.setVisibility(View.VISIBLE);
+            nameButton.setText(name);
+            if (nameButton.getText().toString().equals("")){
+                nameButton.setVisibility(View.GONE);
+            }
+
+        }
+        catch (Exception e){
+            nameButton.setVisibility(View.GONE);
+        }
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -40,6 +61,10 @@ public class MainActivity extends ActionBarActivity {
     }
     public void toInfo (View view){
         Intent intent = new Intent(MainActivity.this, Info.class);
+        startActivity(intent);
+    }
+    public void StraightToResults (View view) {
+        Intent intent = new Intent(MainActivity.this, SearchResults.class);
         startActivity(intent);
     }
 }
