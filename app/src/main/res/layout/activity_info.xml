@@ -15,14 +15,16 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:hint="Name"
-        android:textColorHint="#ffffff"/>
+        android:textColorHint="#ffffff"
+        android:id="@+id/nameID"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:hint="Zip Code"
-        android:textColorHint="#ffffff"/>
+        android:textColorHint="#ffffff"
+        android:id="@+id/zipcodeID"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -49,7 +51,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:hint="Age"
-            android:textColorHint="#ffffff"/>
+            android:textColorHint="#ffffff"
+            android:id="@+id/ageID" />
 
         <TextView
             android:layout_width="match_parent"
@@ -69,19 +72,21 @@
                 android:layout_height="wrap_content"
                 android:text="Undocumented"
                 android:textColor="#ffffff"
-                />
+                android:id="@+id/undocumentedID"/>
 
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Immigrants"
-                android:textColor="#ffffff"/>
+                android:textColor="#ffffff"
+                android:id="@+id/immigrantsID"/>
 
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Refugees"
-                android:textColor="#ffffff"/>
+                android:textColor="#ffffff"
+                android:id="@+id/refugeeID"/>
 
         </LinearLayout>
 
@@ -99,12 +104,14 @@
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Yes" />
+                android:text="Yes"
+                android:id="@+id/latinoYesID"/>
 
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="No" />
+                android:text="No"
+                android:id="@+id/latinoNoID"/>
 
         </LinearLayout>
 
@@ -122,17 +129,20 @@
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="English" />
+                android:text="English"
+                android:id="@+id/englishID"/>
 
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Spanish" />
+                android:text="Spanish"
+                android:id="@+id/spanishID"/>
 
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Both" />
+                android:text="Both"
+                android:id="@+id/bothID"/>
 
         </LinearLayout>
 
