@@ -3,7 +3,7 @@ package alizinha.c4q.nyc.onemorechance;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,7 +12,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 
 
-public class Info extends ActionBarActivity {
+public class Info extends AppCompatActivity{
     LinearLayout advancedSearchLayout;
     EditText nameEditText, zipcodeEditText, age;
     String nameString, zipcodeString, ageString, immigrationStatus;

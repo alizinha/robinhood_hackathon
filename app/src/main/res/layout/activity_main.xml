@@ -26,7 +26,9 @@
         android:padding="20dp"
         android:text="English"
         android:textColor="#ffffff"
-        android:textSize="80sp" />
+        android:textSize="80sp"
+        android:onClick="toInfo"
+        android:clickable="true"/>
 
 
     <TextView
@@ -37,7 +39,21 @@
         android:fontFamily="sans-serif-thin"
         android:text="Español"
         android:textColor="#ffffff"
-        android:textSize="80sp" />
+        android:textSize="80sp"
+        android:onClick="toInfo"
+        android:clickable="true"/>
+
+    <TextView
+        android:id="@+id/setNameID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="sans-serif-thin"
+        android:text="Español"
+        android:textColor="#ffffff"
+        android:textSize="80sp"
+        android:onClick="toResults"
+        android:clickable="true"/>
 
 
 </LinearLayout>
