@@ -7,18 +7,21 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="alizinha.c4q.nyc.onemorechance.ProgramInfo">
+    tools:context="alizinha.c4q.nyc.onemorechance.ProgramInfo"
+    android:background="#33D633">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Title"
-        android:textSize="30sp"/>
+        android:textSize="30sp"
+        android:textColor="#ffffff"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/description" />
+        android:text="@string/description"
+        android:textColor="#ffffff"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
