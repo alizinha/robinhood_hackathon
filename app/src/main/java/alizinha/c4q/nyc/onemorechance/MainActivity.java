@@ -4,14 +4,39 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+
+import retrofit.RestAdapter;
 
 
 public class MainActivity extends ActionBarActivity {
+
+    Button test;
+    AuntBerthaJSON json = new AuntBerthaJSON();
+    private static final String API_KEY= "75ea03a922dc66db2560a23cc4eed49e";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        json.setName("Hello, World!");
+
+        test = (Button) findViewById(R.id.spanish_button);
+        test.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                RestAdapter restAdapter = new RestAdapter.Builder()
+                        .setEndpoint("https://searchbertha-hrd.appspot.com/_ah/api/search/v1")
+                        .build();
+
+                AuntBerthaService service = restAdapter.create(AuntBerthaService.class);
+
+                service.getInfoByProgramAndZipcode("11101", "ahJzfnNlYXJjaGJlcnRoYS1ocmRyFAsSB1Byb2dyYW0YgICAiNboxgoM", API_KEY);
+            }
+        });
+
     }
 
 
