@@ -19,6 +19,15 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        SharedPreferences settings;// = MainActivity.this.getSharedPreferences("PREFS_NAME", 0);
+        settings = MainActivity.this.getSharedPreferences("PREFS_NAME", 0);
+        name = settings.getString("name", "");
+        Intent intent = new Intent(MainActivity.this, SearchResults.class);
+
+        if (!name.equals("")){
+            startActivity(intent);
+        }
+
 
         englishTextView = (TextView) findViewById(R.id.english_button);
         spanishTextView = (TextView) findViewById(R.id.spanish_button);
@@ -51,7 +60,7 @@ public class MainActivity extends Activity {
         });
 
         try {
-            SharedPreferences settings;// = MainActivity.this.getSharedPreferences("PREFS_NAME", 0);
+            //SharedPreferences settings;// = MainActivity.this.getSharedPreferences("PREFS_NAME", 0);
             settings = MainActivity.this.getSharedPreferences("PREFS_NAME", 0);
             name = settings.getString("name", "");
             //button.setVisibility(View.VISIBLE);
@@ -88,13 +97,4 @@ public class MainActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void toInfo(View view) {
-        Intent intent = new Intent(MainActivity.this, Info.class);
-        startActivity(intent);
-    }
-
-    public void StraightToResults(View view) {
-        Intent intent = new Intent(MainActivity.this, SearchResults.class);
-        startActivity(intent);
-    }
 }

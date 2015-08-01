@@ -43,4 +43,8 @@ public class SearchResults extends ActionBarActivity {
         startActivity(intent);
 
     }
+    public void newSearch (View view){
+        Intent intent = new Intent (SearchResults.this, Info.class);
+        startActivity(intent);
+    }
 }

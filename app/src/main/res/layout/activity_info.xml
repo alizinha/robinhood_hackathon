@@ -25,7 +25,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:hint="Zip Code"
-        android:textColorHint="#ffffff" />
+        android:textColorHint="#ffffff"
+        android:phoneNumber="true"/>
 
     <Button
         android:layout_width="wrap_content"
