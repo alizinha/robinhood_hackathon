@@ -7,30 +7,29 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/language" />
+    tools:context="alizinha.c4q.nyc.onemorechance.SearchResults">
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center">
+        android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/english_button"
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="English" />
+            android:text="Search Results" />
 
         <Button
-            android:id="@+id/spanish_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Español" />
+            android:layout_gravity="right"
+            android:text="New Search" />
 
     </LinearLayout>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></ListView>
+
+
 </LinearLayout>
