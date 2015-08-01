@@ -7,7 +7,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="alizinha.c4q.nyc.onemorechance.SearchResults">
+    tools:context="alizinha.c4q.nyc.onemorechance.SearchResults"
+    android:background="#33D633">
 
     <LinearLayout
         android:layout_width="wrap_content"
