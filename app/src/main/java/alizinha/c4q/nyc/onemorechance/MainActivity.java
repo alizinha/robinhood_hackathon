@@ -3,7 +3,6 @@ package alizinha.c4q.nyc.onemorechance;
 import android.app.Activity;
 import android.os.Bundle;
 
-
 public class MainActivity extends Activity {
 
     @Override
@@ -12,7 +11,4 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
     }
-
-
-
 }
