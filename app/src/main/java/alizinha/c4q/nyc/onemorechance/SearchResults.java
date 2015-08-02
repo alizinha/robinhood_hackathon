@@ -85,7 +85,7 @@ public class SearchResults extends ActionBarActivity {
         String zipCode = getIntent().getStringExtra("zipcode");
         Log.v("Tags", zipCode);
 
-        service.getProgramByZipcode(zipCode, API_KEY, 0, 10, new Callback<APIData>() {
+        service.getProgramByZipcode(zipCode, API_KEY, "mentoring,ged/high-school%20equivalency", 0, 10, new Callback<APIData>() {
 
 
             @Override

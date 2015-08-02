@@ -11,7 +11,7 @@ import retrofit.http.Query;
 public interface AuntBerthaService {
 
     @GET("/zipcodes/{zipcode}/programs")
-    void getProgramByZipcode(@Path("zipcode")String zipcode, @Query("api_key") String apiKey, @Query("cursor") int cursor, @Query("limit") int limit, Callback<APIData> cb);
+    void getProgramByZipcode(@Path("zipcode")String zipcode, @Query("api_key") String apiKey, @Query("serviceTag") String tags, @Query("cursor") int cursor, @Query("limit") int limit, Callback<APIData> cb);
 
 
 
