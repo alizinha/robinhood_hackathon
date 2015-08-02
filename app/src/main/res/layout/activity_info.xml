@@ -26,7 +26,7 @@
         android:layout_gravity="center"
         android:hint="@string/zip_code"
         android:textColorHint="#ffffff"
-        android:phoneNumber="true"/>
+        android:inputType="number"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -54,6 +54,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:inputType="number"
             android:hint="@string/age"
             android:textColorHint="#ffffff" />
 
@@ -63,7 +64,8 @@
             android:layout_gravity="center"
             android:hint="@string/citizenship_status"
             android:textColorHint="#ffffff"
-            android:id="@+id/citizenStatusID"/>
+            android:id="@+id/citizenStatusID"
+            android:textSize="20sp"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -74,7 +76,6 @@
                 android:id="@+id/undocumentedID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:button="@drawable/cb_selector"
                 android:text="@string/undocumented"
                 android:textColor="#ffffff" />
 
@@ -82,7 +83,6 @@
                 android:id="@+id/immigrantsID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:button="@drawable/cb_selector"
                 android:text="@string/immigrant"
                 android:textColor="#ffffff" />
 
@@ -90,7 +90,6 @@
                 android:id="@+id/refugeeID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:button="@drawable/cb_selector"
                 android:text="@string/refrugees"
                 android:textColor="#ffffff" />
 
@@ -101,6 +100,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:hint="Latino"
+            android:textSize="20sp"
+
             android:textColor="#ffffff"
             android:textColorHint="#ffffff" />
 
@@ -113,7 +114,6 @@
                 android:id="@+id/latinoYesID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:button="@drawable/cb_selector"
                 android:text="@string/yes"
                 android:textColor="#ffffff" />
 
@@ -121,7 +121,6 @@
                 android:id="@+id/latinoNoID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:button="@drawable/cb_selector"
                 android:text="No"
                 android:textColor="#ffffff" />
 
@@ -136,6 +135,8 @@
             android:hint="@string/preferred_program_language"
             android:textColor="#ffffff"
             android:textColorHint="#ffffff"
+            android:textSize="20sp"
+
             android:id="@+id/preferredProgramLanguageID"/>
 
         <LinearLayout
@@ -147,7 +148,6 @@
                 android:id="@+id/englishID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:button="@drawable/cb_selector"
                 android:text="@string/english"
                 android:textColor="#ffffff" />
 
@@ -155,7 +155,6 @@
                 android:id="@+id/spanishID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:button="@drawable/cb_selector"
                 android:text="@string/spanish"
                 android:textColor="#ffffff" />
 
@@ -163,7 +162,6 @@
                 android:id="@+id/bothID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:button="@drawable/cb_selector"
                 android:text="Both"
                 android:textColor="#ffffff" />
         </LinearLayout>

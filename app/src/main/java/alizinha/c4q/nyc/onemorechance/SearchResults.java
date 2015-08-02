@@ -1,11 +1,11 @@
 package alizinha.c4q.nyc.onemorechance;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -60,6 +60,7 @@ public class SearchResults extends ActionBarActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(SearchResults.this, Info.class);
+                intent.setFlags(1);
                 startActivity(intent);
             }
         });
@@ -82,6 +83,7 @@ public class SearchResults extends ActionBarActivity {
 
     public void loadSearchResults (){
         String zipCode = getIntent().getStringExtra("zipcode");
+        Log.v("Tags", zipCode);
 
         service.getProgramByZipcode(zipCode, API_KEY, 0, 10, new Callback<APIData>() {
 
@@ -116,7 +118,7 @@ public class SearchResults extends ActionBarActivity {
             }
             @Override
             public void failure(RetrofitError error) {
-                Toast.makeText(getApplicationContext(), "Failire", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Failure", Toast.LENGTH_LONG).show();
                 Log.w("TAG", error.toString());
 
             }
@@ -140,4 +142,5 @@ public class SearchResults extends ActionBarActivity {
                 "in our app as to when a location is open, etc., please provide that feedback here. Thank you.");
         startActivity(emailIntent);
     }
+
 }

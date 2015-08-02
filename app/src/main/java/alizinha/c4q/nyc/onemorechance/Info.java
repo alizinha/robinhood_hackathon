@@ -4,8 +4,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -94,9 +92,14 @@ public class Info extends AppCompatActivity{
 
 
                     Intent intent = new Intent(Info.this, SearchResults.class);
+                if (isSpanish){
                     intent.setFlags(1);
                     intent.putExtra("zipcode",zipcodeString);
                     startActivity(intent);
+                }else {
+                    intent.putExtra("zipcode",zipcodeString);
+                    startActivity(intent);
+                }
 
             }
         });
