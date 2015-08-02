@@ -9,16 +9,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import java.util.ArrayList;
-
-import retrofit.Callback;
-import retrofit.RestAdapter;
-import retrofit.RetrofitError;
-import retrofit.client.Response;
 
 
 public class Info extends AppCompatActivity{
@@ -46,9 +37,8 @@ public class Info extends AppCompatActivity{
 
         if (isSpanish) {
 
-            nameEditText.setText("Nombre");
             age.setText("Edad");
-            zipcodeEditText.setText("Codigo Postal");
+            zipcodeEditText.setHint("Codigo Postal");
             undocumented.setText("Indocumentado");
             immigrants.setText("Inmigrante");
             refugee.setText("Refujiado");
@@ -64,7 +54,6 @@ public class Info extends AppCompatActivity{
             @Override
             public void onClick(View view) {
 
-                nameString = nameEditText.getText().toString();
                 zipcodeString = zipcodeEditText.getText().toString();
                 ageString = age.getText().toString();
 
@@ -98,6 +87,7 @@ public class Info extends AppCompatActivity{
                     startActivity(intent);
                 }else {
                     intent.putExtra("zipcode",zipcodeString);
+                    intent.setFlags(0);
                     startActivity(intent);
                 }
 
@@ -110,7 +100,6 @@ public class Info extends AppCompatActivity{
 
     public void initializeViews() {
         advancedSearchLayout = (LinearLayout) findViewById(R.id.advancedSearchLayoutID);
-        nameEditText = (EditText) findViewById(R.id.nameID);
         zipcodeEditText = (EditText) findViewById(R.id.zipcodeID);
         age = (EditText) findViewById(R.id.ageID);
         undocumented = (CheckBox) findViewById(R.id.undocumentedID);

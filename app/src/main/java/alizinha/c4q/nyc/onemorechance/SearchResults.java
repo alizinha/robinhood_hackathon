@@ -2,12 +2,9 @@ package alizinha.c4q.nyc.onemorechance;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -16,7 +13,6 @@ import android.widget.Toast;
 import org.apache.http.protocol.HTTP;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import retrofit.Callback;
 import retrofit.RestAdapter;
@@ -60,8 +56,12 @@ public class SearchResults extends ActionBarActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(SearchResults.this, Info.class);
-                intent.setFlags(1);
-                startActivity(intent);
+                if (isSpanish){
+                    intent.setFlags(1);
+                    startActivity(intent);
+                }else {
+                    startActivity(intent);
+                }
             }
         });
 
