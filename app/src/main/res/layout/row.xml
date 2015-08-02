@@ -10,12 +10,14 @@
         android:layout_height="wrap_content"
         android:id="@+id/title"
         android:text="hello mamahuevo"
-        android:textSize="20sp"/>
+        android:textSize="20sp"
+        android:textColor="@android:color/white"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/description"
-        android:text="info here please"/>
+        android:id="@+id/address"
+        android:text="info here please"
+        android:textColor="@android:color/white"/>
 
 </LinearLayout>

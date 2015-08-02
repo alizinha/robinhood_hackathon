@@ -9,7 +9,16 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+
+import retrofit.Callback;
+import retrofit.RestAdapter;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
 
 
 public class Info extends AppCompatActivity{
@@ -85,8 +94,10 @@ public class Info extends AppCompatActivity{
                     Intent intent = new Intent(Info.this, SearchResults.class);
                 if (isSpanish){
                     intent.setFlags(1);
+                    intent.putExtra("zipcode",zipcodeString);
                     startActivity(intent);
                 }else {
+                    intent.putExtra("zipcode",zipcodeString);
                     startActivity(intent);
                 }
 
@@ -94,6 +105,8 @@ public class Info extends AppCompatActivity{
         });
         
     }
+
+
 
     public void initializeViews() {
         advancedSearchLayout = (LinearLayout) findViewById(R.id.advancedSearchLayoutID);
