@@ -83,8 +83,12 @@ public class Info extends AppCompatActivity{
 
 
                     Intent intent = new Intent(Info.this, SearchResults.class);
+                if (isSpanish){
                     intent.setFlags(1);
                     startActivity(intent);
+                }else {
+                    startActivity(intent);
+                }
 
             }
         });
