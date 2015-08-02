@@ -11,20 +11,14 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="alizinha.c4q.nyc.onemorechance.Info">
 
-    <EditText
-        android:id="@+id/nameID"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:hint="@string/name"
-        android:textColor="#ffffff"
-        android:textColorHint="#ffffff" />
+
 
     <EditText
         android:id="@+id/zipcodeID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:gravity="center"
         android:hint="@string/zip_code"
         android:inputType="number"
         android:textColorHint="#ffffff" />

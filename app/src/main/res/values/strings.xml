@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">OneMoreChance</string>
     <string name="language">Please select language</string>
-    <string name="idioma">Por Favor Seleccional Idioma</string>
+    <string name="idioma">Por Favor Seleccionar Idioma</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_info">Info</string>
     <string name="hello_world">Hello world!</string>
