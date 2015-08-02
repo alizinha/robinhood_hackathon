@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
-    TextView englishTextView, spanishTextView, nameTextView;
+    TextView englishTextView, spanishTextView;
     String name;
 
 
@@ -31,16 +31,7 @@ public class MainActivity extends Activity {
 
         englishTextView = (TextView) findViewById(R.id.english_button);
         spanishTextView = (TextView) findViewById(R.id.spanish_button);
-        nameTextView = (TextView) findViewById(R.id.setNameID);
 
-        nameTextView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Info.class);
-                startActivity(intent);
-
-            }
-        });
 
         englishTextView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,19 +50,7 @@ public class MainActivity extends Activity {
             }
         });
 
-        try {
-            //SharedPreferences settings;// = MainActivity.this.getSharedPreferences("PREFS_NAME", 0);
-            settings = MainActivity.this.getSharedPreferences("PREFS_NAME", 0);
-            name = settings.getString("name", "");
-            //button.setVisibility(View.VISIBLE);
-            nameTextView.setText(name);
-            if (nameTextView.getText().toString().equals("")) {
-                nameTextView.setVisibility(View.GONE);
-            }
-
-        } catch (Exception e) {
-            nameTextView.setVisibility(View.GONE);
-        }
+        
     }
 
 
