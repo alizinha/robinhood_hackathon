@@ -33,14 +33,16 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:onClick="advancedSearch"
-        android:text="Advanced Search" />
+        android:text="Advanced Search"
+        android:id="@+id/advancedSearchButtonID"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:onClick="toResults"
-        android:text="Search" />
+        android:text="Search"
+        android:id="@+id/searchButtonID"/>
 
     <LinearLayout
         android:id="@+id/advancedSearchLayoutID"
@@ -61,7 +63,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:hint="Citizenship Status"
-            android:textColorHint="#ffffff" />
+            android:textColorHint="#ffffff"
+            android:id="@+id/citizenStatusID"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -133,7 +136,8 @@
             android:button="@drawable/cb_selector"
             android:hint="Preferred program language"
             android:textColor="#ffffff"
-            android:textColorHint="#ffffff" />
+            android:textColorHint="#ffffff"
+            android:id="@+id/preferredProgramLanguageID"/>
 
         <LinearLayout
             android:layout_width="wrap_content"

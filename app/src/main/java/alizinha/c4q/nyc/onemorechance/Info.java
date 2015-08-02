@@ -7,9 +7,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 
 public class Info extends AppCompatActivity{
@@ -17,6 +19,10 @@ public class Info extends AppCompatActivity{
     EditText nameEditText, zipcodeEditText, age;
     String nameString, zipcodeString, ageString, immigrationStatus;
     CheckBox undocumented, immigrants, refugee, latinoYes, latinoNo, english, spanish, both;
+    boolean isSpanish = false;
+    Button search, advancedSearch;
+    TextView preferredProgramLanguage, citizenStatus;
+
 
 
     @Override
@@ -26,7 +32,27 @@ public class Info extends AppCompatActivity{
 
         initializeViews();
 
+        isSpanish = getIntent().getFlags() == 1;
+
         advancedSearchLayout.setVisibility(View.GONE);
+
+        if (isSpanish) {
+
+            nameEditText.setText("Nombre");
+            age.setText("Edad");
+            zipcodeEditText.setText("Codigo Postal");
+            undocumented.setText("Indocumentado");
+            immigrants.setText("Inmigrante");
+            refugee.setText("Refujiado");
+            latinoYes.setText("Si");
+            search.setText("Buscar");
+            advancedSearch.setText("Busqueda Avanzada");
+            preferredProgramLanguage.setText("Preferencia de Lenguaje");
+            citizenStatus.setText("Status Migratorio");
+
+
+
+        }
         
     }
 
@@ -43,6 +69,10 @@ public class Info extends AppCompatActivity{
         english = (CheckBox) findViewById(R.id.englishID);
         spanish = (CheckBox) findViewById(R.id.spanishID);
         both = (CheckBox) findViewById(R.id.bothID);
+        search = (Button) findViewById(R.id.searchButtonID);
+        advancedSearch = (Button) findViewById(R.id.advancedSearchButtonID);
+        preferredProgramLanguage = (TextView) findViewById(R.id.preferredProgramLanguageID);
+        citizenStatus = (TextView) findViewById(R.id.citizenStatusID);
 
     }
 

@@ -37,6 +37,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, Info.class);
+                intent.setFlags(0);
                 startActivity(intent);
 
             }
@@ -45,6 +46,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, Info.class);
+                intent.setFlags(1);
                 startActivity(intent);
 
             }
