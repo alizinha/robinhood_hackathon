@@ -36,6 +36,7 @@ public class SearchResults extends ActionBarActivity {
         app = (Button) findViewById(R.id.button_appt_search);
 
         if (isSpanish) {
+
             mTextViewSearchResults.setText("Resultados Encontrados");
             mButtonNewSearch.setText("Nueva Busqueda");
         }
@@ -52,8 +53,12 @@ public class SearchResults extends ActionBarActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(SearchResults.this, AddEventToCalendar.class);
-                intent.setFlags(1);
-                startActivity(intent);
+                if (isSpanish){
+                    intent.setFlags(1);
+                    startActivity(intent);
+                }else {
+                    startActivity(intent);
+                }
             }
         });
 
