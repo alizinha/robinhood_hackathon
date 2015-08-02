@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import org.apache.http.protocol.HTTP;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -60,8 +62,21 @@ public class SearchResults extends ActionBarActivity {
     public void bookAppointment(View v) {
         Intent intent = new Intent(SearchResults.this, AddEventToCalendar.class);
         startActivity(intent);
-
     }
+
+    public void giveFeedbackOnAppointment(View v) {
+        Intent emailIntent = new Intent(Intent.ACTION_SEND);
+// The intent does not have a URI, so declare the "text/plain" MIME type
+        emailIntent.setType(HTTP.PLAIN_TEXT_TYPE);
+        emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[] {"support@auntbertha.com"}); // recipients
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Change Request C4Q");
+        emailIntent.putExtra(Intent.EXTRA_TEXT, "If you'd like to give feedback on a particular service, please write \n" +
+                "their name and give a rating between one (worst) and five (best) stars. If you found any wrong information \n" +
+                "in our app as to when a location is open, etc., please provide that feedback here. Thank you.");
+        startActivity(emailIntent);
+    }
+
+
     public void newSearch (View view){
         Intent intent = new Intent (SearchResults.this, Info.class);
         startActivity(intent);

@@ -37,6 +37,13 @@
 
     </LinearLayout>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:onClick="giveFeedbackOnAppointment"
+        android:text="@string/give_feedback_on_appointment" />
+
     <ListView
         android:id="@+id/list_item"
         android:layout_width="match_parent"
