@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import org.apache.http.protocol.HTTP;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,7 +33,7 @@ public class SearchResults extends ActionBarActivity {
 
         mTextViewSearchResults = (TextView) findViewById(R.id.text_view_search_result);
         mButtonNewSearch = (Button) findViewById(R.id.button_new_search);
-        app = (Button)findViewById(R.id.button_appt_search);
+        app = (Button) findViewById(R.id.button_appt_search);
 
         if (isSpanish) {
             mTextViewSearchResults.setText("Resultados Encontrados");
@@ -41,7 +43,7 @@ public class SearchResults extends ActionBarActivity {
         mButtonNewSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent (SearchResults.this, Info.class);
+                Intent intent = new Intent(SearchResults.this, Info.class);
                 startActivity(intent);
             }
         });
@@ -66,9 +68,26 @@ public class SearchResults extends ActionBarActivity {
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
                 this,
                 android.R.layout.simple_list_item_1,
-                your_array_list );
+                your_array_list);
 
         lv.setAdapter(arrayAdapter);
     }
 
+
+    public void bookAppointment(View v) {
+        Intent intent = new Intent(SearchResults.this, AddEventToCalendar.class);
+        startActivity(intent);
+    }
+
+    public void giveFeedbackOnAppointment(View v) {
+        Intent emailIntent = new Intent(Intent.ACTION_SEND);
+// The intent does not have a URI, so declare the "text/plain" MIME type
+        emailIntent.setType(HTTP.PLAIN_TEXT_TYPE);
+        emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{"support@auntbertha.com"}); // recipients
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Change Request C4Q");
+        emailIntent.putExtra(Intent.EXTRA_TEXT, "If you'd like to give feedback on a particular service, please write \n" +
+                "their name and give a rating between one (worst) and five (best) stars. If you found any wrong information \n" +
+                "in our app as to when a location is open, etc., please provide that feedback here. Thank you.");
+        startActivity(emailIntent);
+    }
 }
