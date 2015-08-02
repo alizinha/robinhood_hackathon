@@ -5,22 +5,20 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
-public class Info extends AppCompatActivity{
+public class Info extends AppCompatActivity {
     LinearLayout advancedSearchLayout;
     EditText nameEditText, zipcodeEditText, age;
     String nameString, zipcodeString, ageString, immigrationStatus;
     CheckBox undocumented, immigrants, refugee, latinoYes, latinoNo, english, spanish, both;
     boolean isSpanish = false;
-    Button search, advancedSearch;
+    //Button search, advancedSearch;
     TextView preferredProgramLanguage, citizenStatus;
-
 
 
     @Override
@@ -44,55 +42,13 @@ public class Info extends AppCompatActivity{
             immigrants.setText("Inmigrante");
             refugee.setText("Refujiado");
             latinoYes.setText("Si");
-            search.setText("Buscar");
-            advancedSearch.setText("Busqueda Avanzada");
+            //search.setText("Buscar");
+            //advancedSearch.setText("Busqueda Avanzada");
             preferredProgramLanguage.setText("Preferencia de Lenguaje");
             citizenStatus.setText("Status Migratorio");
 
         }
 
-        search.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                nameString = nameEditText.getText().toString();
-                zipcodeString = zipcodeEditText.getText().toString();
-                ageString = age.getText().toString();
-
-                SharedPreferences info;
-                info = Info.this.getSharedPreferences("PREFS_NAME", 0);
-                SharedPreferences.Editor editor = info.edit();
-
-                editor.putString("name", nameString);
-                editor.putString("zipcode", zipcodeString);
-                editor.putString("age", ageString);
-
-
-                if(undocumented.isChecked() == true){
-                    immigrationStatus = "undocumented";
-                }
-                else if (immigrants.isChecked() == true){
-                    immigrationStatus = "immigrant";
-                }
-                else {
-                    immigrationStatus = "refugee";
-                }
-
-                editor.putString("immigrationStatus", immigrationStatus);
-                editor.commit();
-
-
-                    Intent intent = new Intent(Info.this, SearchResults.class);
-                if (isSpanish){
-                    intent.setFlags(1);
-                    startActivity(intent);
-                }else {
-                    startActivity(intent);
-                }
-
-            }
-        });
-        
     }
 
     public void initializeViews() {
@@ -108,15 +64,53 @@ public class Info extends AppCompatActivity{
         english = (CheckBox) findViewById(R.id.englishID);
         spanish = (CheckBox) findViewById(R.id.spanishID);
         both = (CheckBox) findViewById(R.id.bothID);
-        search = (Button) findViewById(R.id.searchButtonID);
-        advancedSearch = (Button) findViewById(R.id.advancedSearchButtonID);
+        //search = (Button) findViewById(R.id.searchButtonID);
+        //advancedSearch = (Button) findViewById(R.id.advancedSearchButtonID);
         preferredProgramLanguage = (TextView) findViewById(R.id.preferredProgramLanguageID);
         citizenStatus = (TextView) findViewById(R.id.citizenStatusID);
 
     }
 
-    public void advancedSearch (View view) {
+    public void advancedSearch(View view) {
         advancedSearchLayout.setVisibility(View.VISIBLE);
-        
+
     }
+
+    public void search(View view) {
+
+        nameString = nameEditText.getText().toString();
+        zipcodeString = zipcodeEditText.getText().toString();
+        ageString = age.getText().toString();
+
+        SharedPreferences info;
+        info = Info.this.getSharedPreferences("PREFS_NAME", 0);
+        SharedPreferences.Editor editor = info.edit();
+
+        editor.putString("name", nameString);
+        editor.putString("zipcode", zipcodeString);
+        editor.putString("age", ageString);
+
+
+        if (undocumented.isChecked() == true) {
+            immigrationStatus = "undocumented";
+        } else if (immigrants.isChecked() == true) {
+            immigrationStatus = "immigrant";
+        } else {
+            immigrationStatus = "refugee";
+        }
+
+        editor.putString("immigrationStatus", immigrationStatus);
+        editor.commit();
+
+
+        Intent intent = new Intent(Info.this, SearchResults.class);
+        if (isSpanish) {
+            intent.setFlags(1);
+            startActivity(intent);
+        } else {
+            startActivity(intent);
+        }
+
+    }
+
 }
