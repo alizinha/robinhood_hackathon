@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="alizinha.c4q.nyc.onemorechance">
 
+    <uses-sdk
+        android:minSdkVersion="7"
+        android:targetSdkVersion="17" />
+
     <uses-permission android:name="android.permission.READ_CALENDAR" />
     <uses-permission android:name="android.permission.WRITE_CALENDAR" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -23,27 +27,26 @@
         </activity>
         <activity
             android:name=".Info"
-            android:label="@string/title_activity_info">
+            android:label="@string/title_activity_info"></activity>
 
-            </activity>
+
         <activity
             android:name=".SearchResults"
-            android:label="@string/title_activity_search_results">
-
-            </activity>
+            android:label="@string/title_activity_search_results"></activity>
         <activity
             android:name=".AddEventToCalendar"
             android:label="@string/title_activity_add_event_to_calendar">
 
-            </activity>
+        </activity>
 
         <activity
-
             android:name=".ProgramInfo"
-            android:label="@string/title_activity_program_info">
+            android:label="@string/title_activity_program_info"></activity>
+        <activity
+            android:name=".practice"
+            android:label="@string/title_activity_practice"></activity>
 
 
-            </activity>
     </application>
 
 </manifest>

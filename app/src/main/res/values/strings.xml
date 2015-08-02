@@ -9,13 +9,13 @@
     <string name="title_activity_add_event_to_calendar">AddEventToCalendar</string>
     <string name="title_activity_program_info">ProgramInfo</string>
     <string name="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean viverra, velit eget finibus faucibus, enim nisi dignissim elit, sit amet vestibulum nibh diam eu nunc. Etiam quam justo, semper sed sem et, luctus malesuada lorem. Nam tincidunt velit egestas neque suscipit hendrerit. Mauris iaculis et lorem et scelerisque. Nam porttitor vel mi ac volutpat. Aliquam a enim ac dui aliquam molestie id laoreet mi. Suspendisse rutrum lorem erat, tempor ultricies lorem lacinia quis. Proin id iaculis purus, non vulputate felis. Ut a est eget metus iaculis euismod id vel dui.</string>
+    <string name="title_activity_practice">practice</string>
     <string name="name">Name</string>
     <string name="zip_code">Zip Code</string>
     <string name="advanced_search">Advanced Search</string>
     <string name="search">Search</string>
     <string name="age">Age</string>
     <string name="citizenship_status">Citizenship Status</string>
-
     <string name="new_event_title">New Event Title</string>
     <string name="location">Location</string>
     <string name="descriotion">Description</string>
@@ -29,7 +29,6 @@
     <string name="spanish">Spanish</string>
     <string name="new_search">New Search</string>
     <string name="search_result">Search Results</string>
-
     <string name="give_feedback_on_appointment">Give feedback on appointment</string>
 
 </resources>
