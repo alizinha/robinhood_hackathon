@@ -1,5 +1,6 @@
 package alizinha.c4q.nyc.onemorechance;
 
+import retrofit.Callback;
 import retrofit.http.GET;
 import retrofit.http.Path;
 import retrofit.http.Query;
@@ -10,7 +11,7 @@ import retrofit.http.Query;
 public interface AuntBerthaService {
 
     @GET("/zipcodes/{zipcode}/programs")
-    public AuntBerthaJSON getInfoByProgramAndZipcode(@Path("zipcode")String zipcode, @Query("api_key") String apiKey);
+    void getProgramByZipcode(@Path("zipcode")String zipcode, @Query("api_key") String apiKey, @Query("cursor") int cursor, @Query("limit") int limit, Callback<APIData> cb);
 
 
 
