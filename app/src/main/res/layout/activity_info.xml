@@ -26,7 +26,7 @@
         android:layout_gravity="center"
         android:hint="Zip Code"
         android:textColorHint="#ffffff"
-        android:phoneNumber="true"/>
+        android:inputType="number"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -56,7 +56,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:hint="Age"
-            android:textColorHint="#ffffff" />
+            android:textColorHint="#ffffff"
+            android:inputType="number"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -64,7 +65,8 @@
             android:layout_gravity="center"
             android:hint="Citizenship Status"
             android:textColorHint="#ffffff"
-            android:id="@+id/citizenStatusID"/>
+            android:id="@+id/citizenStatusID"
+            android:textSize="20sp"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -75,7 +77,6 @@
                 android:id="@+id/undocumentedID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:button="@drawable/cb_selector"
                 android:text="Undocumented"
                 android:textColor="#ffffff" />
 
@@ -83,7 +84,6 @@
                 android:id="@+id/immigrantsID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:button="@drawable/cb_selector"
                 android:text="Immigrants"
                 android:textColor="#ffffff" />
 
@@ -91,7 +91,6 @@
                 android:id="@+id/refugeeID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:button="@drawable/cb_selector"
                 android:text="Refugees"
                 android:textColor="#ffffff" />
 
@@ -102,6 +101,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:hint="Latino"
+            android:textSize="20sp"
+
             android:textColor="#ffffff"
             android:textColorHint="#ffffff" />
 
@@ -114,7 +115,6 @@
                 android:id="@+id/latinoYesID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:button="@drawable/cb_selector"
                 android:text="Yes"
                 android:textColor="#ffffff" />
 
@@ -122,7 +122,6 @@
                 android:id="@+id/latinoNoID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:button="@drawable/cb_selector"
                 android:text="No"
                 android:textColor="#ffffff" />
 
@@ -133,10 +132,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:button="@drawable/cb_selector"
             android:hint="Preferred program language"
             android:textColor="#ffffff"
             android:textColorHint="#ffffff"
+            android:textSize="20sp"
+
             android:id="@+id/preferredProgramLanguageID"/>
 
         <LinearLayout
@@ -148,7 +148,6 @@
                 android:id="@+id/englishID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:button="@drawable/cb_selector"
                 android:text="English"
                 android:textColor="#ffffff" />
 
@@ -156,7 +155,6 @@
                 android:id="@+id/spanishID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:button="@drawable/cb_selector"
                 android:text="Spanish"
                 android:textColor="#ffffff" />
 
@@ -164,7 +162,6 @@
                 android:id="@+id/bothID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:button="@drawable/cb_selector"
                 android:text="Both"
                 android:textColor="#ffffff" />
         </LinearLayout>
