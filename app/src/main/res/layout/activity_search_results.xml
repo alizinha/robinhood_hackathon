@@ -21,7 +21,9 @@
             android:layout_height="wrap_content"
             android:text="@string/search_result"
             android:textSize="30sp"
-            android:id="@+id/text_view_search_result"/>
+            android:id="@+id/text_view_search_result"
+            android:fontFamily="sans-serif-thin"
+            android:textColor="#ffffff"/>
 
 
     </LinearLayout>
@@ -37,13 +39,6 @@
             android:layout_height="wrap_content"
             android:id="@+id/button_new_search"
             android:text="@string/new_search" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/button_appt_search"
-            android:text="apa" />
-
 
     </LinearLayout>
 

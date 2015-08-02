@@ -9,11 +9,8 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import org.apache.http.protocol.HTTP;
-
 import java.util.ArrayList;
-
 import retrofit.Callback;
 import retrofit.RestAdapter;
 import retrofit.RetrofitError;
@@ -45,7 +42,6 @@ public class SearchResults extends ActionBarActivity {
 
         mTextViewSearchResults = (TextView) findViewById(R.id.text_view_search_result);
         mButtonNewSearch = (Button) findViewById(R.id.button_new_search);
-        app = (Button) findViewById(R.id.button_appt_search);
 
         if (isSpanish) {
             mTextViewSearchResults.setText("Resultados Encontrados");
@@ -56,32 +52,24 @@ public class SearchResults extends ActionBarActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(SearchResults.this, Info.class);
-                if (isSpanish){
+                if (isSpanish) {
                     intent.setFlags(1);
                     startActivity(intent);
-                }else {
+                } else {
                     startActivity(intent);
                 }
             }
         });
 
-        app.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(SearchResults.this, AddEventToCalendar.class);
-                intent.setFlags(1);
-                startActivity(intent);
-            }
-        });
+        lv = (ListView) findViewById(R.id.list_item);
 
 
         loadSearchResults();
 
 
-
     }
 
-    public void loadSearchResults (){
+    public void loadSearchResults() {
         String zipCode = getIntent().getStringExtra("zipcode");
         Log.v("Tags", zipCode);
 
@@ -109,13 +97,13 @@ public class SearchResults extends ActionBarActivity {
                 }
 
 
-
                 CustomAdapter adapter = new CustomAdapter(getApplicationContext(), R.layout.row, offices);
 
 
                 lv.setAdapter(adapter);
 
             }
+
             @Override
             public void failure(RetrofitError error) {
                 Toast.makeText(getApplicationContext(), "Failure", Toast.LENGTH_LONG).show();

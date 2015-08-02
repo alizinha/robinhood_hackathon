@@ -16,9 +16,12 @@
     <string name="search">Search</string>
     <string name="age">Age</string>
     <string name="citizenship_status">Citizenship Status</string>
-    <string name="new_event_title">New Event Title</string>
-    <string name="location">Location</string>
-    <string name="descriotion">Description</string>
+    <string name="new_event_title">Title</string>
+    <string name="event_title_description">Write the title to your new event</string>
+    <string name="location">Write the location to the event here.</string>
+    <string name="location_title">Location</string>
+    <string name="descriotion">Write your description</string>
+    <string name="description_title">Description</string>
     <string name="create_event">Create Event</string>
     <string name="undocumented">Undocumented</string>
     <string name="immigrant">Immigrants</string>
@@ -30,5 +33,6 @@
     <string name="new_search">New Search</string>
     <string name="search_result">Search Results</string>
     <string name="give_feedback_on_appointment">Give feedback on appointment</string>
+    <string name="title_activity_splash_screen">SplashScreen</string>
 
 </resources>
