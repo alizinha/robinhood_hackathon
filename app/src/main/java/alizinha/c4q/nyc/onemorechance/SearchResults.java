@@ -7,7 +7,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,11 +17,45 @@ import java.util.List;
 
 public class SearchResults extends ActionBarActivity {
     ListView lv;
+    private TextView mTextViewSearchResults;
+    private Button mButtonNewSearch;
+    boolean isSpanish = false;
+    Button app;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_results);
+
+        isSpanish = getIntent().getFlags() == 1;
+
+        mTextViewSearchResults = (TextView) findViewById(R.id.text_view_search_result);
+        mButtonNewSearch = (Button) findViewById(R.id.button_new_search);
+        app = (Button)findViewById(R.id.button_appt_search);
+
+        if (isSpanish) {
+            mTextViewSearchResults.setText("Resultados Encontrados");
+            mButtonNewSearch.setText("Nueva Busqueda");
+        }
+
+        mButtonNewSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent (SearchResults.this, Info.class);
+                startActivity(intent);
+            }
+        });
+
+        app.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SearchResults.this, AddEventToCalendar.class);
+                intent.setFlags(1);
+                startActivity(intent);
+            }
+        });
+
+
         lv = (ListView) findViewById(R.id.list_item);
 
         List<String> your_array_list = new ArrayList<String>();
@@ -35,35 +71,4 @@ public class SearchResults extends ActionBarActivity {
         lv.setAdapter(arrayAdapter);
     }
 
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_search_results, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-    public void bookAppointment(View v) {
-        Intent intent = new Intent(SearchResults.this, AddEventToCalendar.class);
-        startActivity(intent);
-
-    }
-    public void newSearch (View view){
-        Intent intent = new Intent (SearchResults.this, Info.class);
-        startActivity(intent);
-    }
 }

@@ -11,36 +11,51 @@
     tools:context="alizinha.c4q.nyc.onemorechance.SearchResults">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Search Results" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:onClick="newSearch"
-            android:text="New Search" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:onClick="bookAppointment"
-            android:text="Book Appointment" />
+            android:text="@string/search_result"
+            android:textSize="30sp"
+            android:id="@+id/text_view_search_result"/>
 
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_new_search"
+            android:text="@string/new_search" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_appt_search"
+            android:text="apa" />
+
+
+    </LinearLayout>
+
+
     <ListView
         android:id="@+id/list_item"
+        android:layout_marginTop="15dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></ListView>
+        android:layout_height="match_parent">
+
+
+        </ListView>
 
 
 </LinearLayout>

@@ -3,11 +3,8 @@ package alizinha.c4q.nyc.onemorechance;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.content.Intent;
-import android.os.Bundle;
 import android.provider.CalendarContract;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -17,44 +14,57 @@ import android.widget.EditText;
 
 
 public class AddEventToCalendar extends ActionBarActivity {
-    Button submit;
-    EditText newTitle;
-    EditText newLocation;
-    EditText description;
-    String getTitle;
-    String getLocation;
-    String getDescription;
+    private Button mButtonSubmit;
+    private EditText mEditTextNewTitle;
+    private EditText mEditTextNewLocation;
+    private EditText mEditTextDescription;
+    private String getTitle;
+    private String getLocation;
+    private String getDescription;
+    boolean isSpanish = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_event_to_calendar);
-        Button submit = (Button) findViewById(R.id.submit);
-        newTitle = (EditText) findViewById(R.id.newTitle);
-        newLocation = (EditText) findViewById(R.id.newLocation);
-        description = (EditText) findViewById(R.id.newDescription);
+
+        isSpanish = getIntent().getFlags() == 1;
+
+        mButtonSubmit = (Button) findViewById(R.id.submit);
+        mEditTextNewTitle = (EditText) findViewById(R.id.newTitle);
+        mEditTextNewLocation = (EditText) findViewById(R.id.newLocation);
+        mEditTextDescription = (EditText) findViewById(R.id.newDescription);
+
+        if(isSpanish) {
+            mEditTextNewTitle.setHint("Titulo de Nuevo Evento");
+            mEditTextNewLocation.setHint("Ubicación");
+            mEditTextDescription.setHint("Descripción");
+            mButtonSubmit.setText("Crear Evento");
+        }
 
 
-        submit.setOnClickListener(new View.OnClickListener() {
+
+
+        mButtonSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if (newTitle.getText() != null) {
-                    getTitle = newTitle.getText().toString();
+                if (mEditTextNewTitle.getText() != null) {
+                    getTitle = mEditTextNewTitle.getText().toString();
                 } else {
                     getTitle = "";
                 }
 
 
-                if (newLocation.getText() != null) {
-                    getLocation = newLocation.getText().toString();
+                if (mEditTextNewLocation.getText() != null) {
+                    getLocation = mEditTextNewLocation.getText().toString();
                 } else {
                     getLocation = "";
                 }
 
 
-                if (description.getText() != null) {
-                    getDescription = description.getText().toString();
+                if (mEditTextDescription.getText() != null) {
+                    getDescription = mEditTextDescription.getText().toString();
                 } else {
                     getDescription = "";
                 }

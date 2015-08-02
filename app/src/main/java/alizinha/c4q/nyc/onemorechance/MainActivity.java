@@ -24,9 +24,9 @@ public class MainActivity extends Activity {
         name = settings.getString("name", "");
         Intent intent = new Intent(MainActivity.this, SearchResults.class);
 
-        if (!name.equals("")){
-            startActivity(intent);
-        }
+//        if (!name.equals("")){
+//            startActivity(intent);
+//        }
 
 
         englishTextView = (TextView) findViewById(R.id.english_button);

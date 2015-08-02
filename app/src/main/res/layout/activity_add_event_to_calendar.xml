@@ -11,9 +11,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/newTitle"
         android:gravity="center"
-        android:hint="New Event Title"
+        android:hint="@string/new_event_title"
         android:background="@null"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:textStyle="bold"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
@@ -23,8 +23,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/newLocation"
         android:gravity="center"
-        android:hint="Location"
-        android:textSize="30dp"
+        android:hint="@string/location"
+        android:textSize="30sp"
         android:layout_below="@+id/newTitle"
         android:layout_centerHorizontal="true" />
 
@@ -36,8 +36,8 @@
         android:layout_marginTop="20dp"
         android:background="@null"
         android:textStyle="italic"
-        android:textSize="20dp"
-        android:hint="Description"
+        android:textSize="20sp"
+        android:hint="@string/descriotion"
         android:layout_marginBottom="45dp"
         android:gravity="center_horizontal"
         android:layout_below="@+id/newLocation"
@@ -72,7 +72,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginTop="20dp"
         android:onClick="submitEvent"
-        android:text="Create Event"/>
+        android:text="@string/create_event"/>
 
 
 </RelativeLayout>

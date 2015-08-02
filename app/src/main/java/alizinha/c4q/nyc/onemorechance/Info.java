@@ -51,9 +51,45 @@ public class Info extends AppCompatActivity{
             preferredProgramLanguage.setText("Preferencia de Lenguaje");
             citizenStatus.setText("Status Migratorio");
 
-
-
         }
+
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                nameString = nameEditText.getText().toString();
+                zipcodeString = zipcodeEditText.getText().toString();
+                ageString = age.getText().toString();
+
+                SharedPreferences info;
+                info = Info.this.getSharedPreferences("PREFS_NAME", 0);
+                SharedPreferences.Editor editor = info.edit();
+
+                editor.putString("name", nameString);
+                editor.putString("zipcode", zipcodeString);
+                editor.putString("age", ageString);
+
+
+                if(undocumented.isChecked() == true){
+                    immigrationStatus = "undocumented";
+                }
+                else if (immigrants.isChecked() == true){
+                    immigrationStatus = "immigrant";
+                }
+                else {
+                    immigrationStatus = "refugee";
+                }
+
+                editor.putString("immigrationStatus", immigrationStatus);
+                editor.commit();
+
+
+                    Intent intent = new Intent(Info.this, SearchResults.class);
+                    intent.setFlags(1);
+                    startActivity(intent);
+
+            }
+        });
         
     }
 
@@ -77,59 +113,6 @@ public class Info extends AppCompatActivity{
 
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_info, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    public void toResults(View view) {
-        nameString = nameEditText.getText().toString();
-        zipcodeString = zipcodeEditText.getText().toString();
-        ageString = age.getText().toString();
-
-        SharedPreferences info;
-        info = Info.this.getSharedPreferences("PREFS_NAME", 0);
-        SharedPreferences.Editor editor = info.edit();
-
-        editor.putString("name", nameString);
-        editor.putString("zipcode", zipcodeString);
-        editor.putString("age", ageString);
-
-
-        if(undocumented.isChecked() == true){
-            immigrationStatus = "undocumented";
-        }
-        else if (immigrants.isChecked() == true){
-            immigrationStatus = "immigrant";
-        }
-        else {
-            immigrationStatus = "refugee";
-        }
-
-        editor.putString("immigrationStatus", immigrationStatus);
-        editor.commit();
-
-        Intent intent = new Intent(Info.this, SearchResults.class);
-        startActivity(intent);
-
-    }
     public void advancedSearch (View view) {
         advancedSearchLayout.setVisibility(View.VISIBLE);
         
