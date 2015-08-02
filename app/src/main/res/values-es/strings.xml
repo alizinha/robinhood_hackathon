@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <!--<string name="name">Nombre</string>-->
+    <!--<string name="zip_code">Codigo Postal</string>-->
+    <!--<string name="advanced_search">Busqueda Avanzada</string>-->
+    <!--<string name="search">Buscar</string>-->
+    <!--<string name="age">Edad</string>-->
+    <!--<string name="citizenship_status">Estatus Migratorio</string>-->
+
+    <!--<string name="new_event_title">Titulo de Nuevo Evento</string>-->
+    <!--<string name="location">Ubicación</string>-->
+    <!--<string name="descriotion">Descripción</string>-->
+    <!--<string name="create_event">Crear Evento</string>-->
+
+    <!--<string name="undocumented">Indocumentado</string>-->
+    <!--<string name="immigrant">Inmigrante</string>-->
+    <!--<string name="refrugees">Refugiado</string>-->
+    <!--<string name="yes">si</string>-->
+    <!--<string name="preferred_program_language">Idioma Preferido </string>-->
+    <!--<string name="english">Ingles</string>-->
+    <!--<string name="spanish">Español</string>-->
+
+    <!--<string name="new_search">Nueva Busqueda</string>-->
+    <!--<string name="search_result">Resultados</string>-->
+
+
+</resources>

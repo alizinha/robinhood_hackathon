@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#33D633"
     android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -10,46 +11,59 @@
     tools:context="alizinha.c4q.nyc.onemorechance.Info">
 
     <EditText
+        android:id="@+id/nameID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:hint="Name" />
+        android:hint="@string/name"
+        android:textColor="#ffffff"
+        android:textColorHint="#ffffff" />
 
     <EditText
+        android:id="@+id/zipcodeID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:hint="Zip Code" />
-
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Advanced Search" />
+        android:hint="@string/zip_code"
+        android:textColorHint="#ffffff"
+        android:phoneNumber="true"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Search" />
+        android:onClick="advancedSearch"
+        android:text="@string/advanced_search"
+        android:id="@+id/advancedSearchButtonID"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/search"
+        android:id="@+id/searchButtonID"/>
 
     <LinearLayout
+        android:id="@+id/advancedSearchLayoutID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <EditText
+            android:id="@+id/ageID"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:hint="Age" />
+            android:hint="@string/age"
+            android:textColorHint="#ffffff" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:hint="Citizenship Status" />
+            android:hint="@string/citizenship_status"
+            android:textColorHint="#ffffff"
+            android:id="@+id/citizenStatusID"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -57,19 +71,28 @@
             android:orientation="horizontal">
 
             <CheckBox
+                android:id="@+id/undocumentedID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Undocumented" />
+                android:button="@drawable/cb_selector"
+                android:text="@string/undocumented"
+                android:textColor="#ffffff" />
 
             <CheckBox
+                android:id="@+id/immigrantsID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Immigrants" />
+                android:button="@drawable/cb_selector"
+                android:text="@string/immigrant"
+                android:textColor="#ffffff" />
 
             <CheckBox
+                android:id="@+id/refugeeID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Refugees" />
+                android:button="@drawable/cb_selector"
+                android:text="@string/refrugees"
+                android:textColor="#ffffff" />
 
         </LinearLayout>
 
@@ -77,7 +100,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:hint="Latino" />
+            android:hint="Latino"
+            android:textColor="#ffffff"
+            android:textColorHint="#ffffff" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -85,14 +110,21 @@
             android:orientation="horizontal">
 
             <CheckBox
+                android:id="@+id/latinoYesID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Yes" />
+                android:button="@drawable/cb_selector"
+                android:text="@string/yes"
+                android:textColor="#ffffff" />
 
             <CheckBox
+                android:id="@+id/latinoNoID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="No" />
+                android:button="@drawable/cb_selector"
+                android:text="No"
+                android:textColor="#ffffff" />
+
 
         </LinearLayout>
 
@@ -100,7 +132,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:hint="Preferred program language" />
+            android:button="@drawable/cb_selector"
+            android:hint="@string/preferred_program_language"
+            android:textColor="#ffffff"
+            android:textColorHint="#ffffff"
+            android:id="@+id/preferredProgramLanguageID"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -108,20 +144,28 @@
             android:orientation="horizontal">
 
             <CheckBox
+                android:id="@+id/englishID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="English" />
+                android:button="@drawable/cb_selector"
+                android:text="@string/english"
+                android:textColor="#ffffff" />
 
             <CheckBox
+                android:id="@+id/spanishID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Spanish" />
+                android:button="@drawable/cb_selector"
+                android:text="@string/spanish"
+                android:textColor="#ffffff" />
 
             <CheckBox
+                android:id="@+id/bothID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Both" />
-
+                android:button="@drawable/cb_selector"
+                android:text="Both"
+                android:textColor="#ffffff" />
         </LinearLayout>
 
     </LinearLayout>
