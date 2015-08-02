@@ -1,10 +1,8 @@
 package alizinha.c4q.nyc.onemorechance;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -44,6 +42,7 @@ public class SearchResults extends ActionBarActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(SearchResults.this, Info.class);
+                intent.setFlags(1);
                 startActivity(intent);
             }
         });
