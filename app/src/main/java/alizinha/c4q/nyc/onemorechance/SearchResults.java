@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -77,13 +78,13 @@ public class SearchResults extends ActionBarActivity {
 
 
             @Override
-            public void success(APIData apiData, Response response) {
+            public void success(final APIData apiData, Response response) {
                 //Toast.makeText(getApplicationContext(), apiData.programs.get(0).offices.get(0).name, Toast.LENGTH_LONG).show();
                 lv = (ListView) findViewById(R.id.list_item);
 
                 ArrayList<String> your_array_list = new ArrayList<String>();
 
-                Office[] offices = new Office[10];
+                final Office[] offices = new Office[10];
                 for (int i = 0; i < 10; i++) {
                     Office o = new Office();
 
@@ -93,7 +94,6 @@ public class SearchResults extends ActionBarActivity {
                             + apiData.programs.get(i).offices.get(0).state;
 
                     offices[i] = o;
-
                 }
 
 
@@ -101,6 +101,26 @@ public class SearchResults extends ActionBarActivity {
 
 
                 lv.setAdapter(adapter);
+                lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                        String description = apiData.programs.get(i).description;
+                        String website = apiData.programs.get(i).website;
+                        String title = apiData.programs.get(i).offices.get(0).name;
+                        String phoneNumber = apiData.programs.get(i).offices.get(0).phoneNumber;
+                        String address = apiData.programs.get(i).offices.get(0).address1 + "\n"
+                                + apiData.programs.get(i).offices.get(0).city + ", "
+                                + apiData.programs.get(i).offices.get(0).state;
+
+                        Intent intent = new Intent(SearchResults.this, ProgramInfo.class);
+                        intent.putExtra("description", description);
+                        intent.putExtra("title", title);
+                        intent.putExtra("address", address);
+                        intent.putExtra("phone_number", phoneNumber);
+                        intent.putExtra("website", website);
+                        startActivity(intent);
+                    }
+                });
 
             }
 

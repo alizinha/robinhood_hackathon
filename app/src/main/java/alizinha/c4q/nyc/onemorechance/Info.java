@@ -77,6 +77,12 @@ public class Info extends AppCompatActivity {
 
     public void search(View view) {
 
+        if (undocumented.isChecked()){
+            String is = "ud";
+
+
+        }
+
         //nameString = nameEditText.getText().toString();
         zipcodeString = zipcodeEditText.getText().toString();
         ageString = age.getText().toString();

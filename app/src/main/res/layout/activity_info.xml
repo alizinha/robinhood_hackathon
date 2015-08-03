@@ -120,6 +120,28 @@
             android:textColorHint="#ffffff"
             android:textSize="20sp" />
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/latinoYesID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yes"
+                android:textColor="#ffffff" />
+
+            <CheckBox
+                android:id="@+id/latinoNoID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No"
+                android:textColor="#ffffff" />
+
+
+        </LinearLayout>
+
 
 
         <TextView
@@ -159,27 +181,7 @@
                 android:text="Both"
                 android:textColor="#ffffff" />
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
 
-            <CheckBox
-                android:id="@+id/latinoYesID"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/yes"
-                android:textColor="#ffffff" />
-
-            <CheckBox
-                android:id="@+id/latinoNoID"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="No"
-                android:textColor="#ffffff" />
-
-
-        </LinearLayout>
 
     </LinearLayout>
 </LinearLayout>
