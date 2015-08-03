@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -20,11 +21,16 @@ public class Info extends AppCompatActivity {
     boolean isSpanish = false;
     TextView preferredProgramLanguage, citizenStatus;
     FloatingActionButton sb, asb, sb2;
+    private Button mButtonBio, locations;
+    private String textSpanish;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info);
+
+        mButtonBio = (Button) findViewById(R.id.button_bio);
+        locations = (Button) findViewById(R.id.button_places);
 
         initializeViews();
 
@@ -40,16 +46,33 @@ public class Info extends AppCompatActivity {
             immigrants.setText("Inmigrante");
             refugee.setText("Refujiado");
             latinoYes.setText("Si");
-            //search.setText("Buscar");
-            //advancedSearch.setText("Busqueda Avanzada");
             preferredProgramLanguage.setText("Preferencia de Lenguaje");
             citizenStatus.setText("Status Migratorio");
             english.setText("Ingles");
             spanish.setText("Español");
             both.setText("Ambos");
+            mButtonBio.setText("Biografias");
+            locations.setText("lugares Que He Visitado");
 
         }
-    }
+
+
+            mButtonBio.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(Info.this, BiographyClass.class);
+                    if (isSpanish) {
+                        intent.setFlags(1);
+                        startActivity(intent);
+                    } else {
+                        startActivity(intent);
+                    }
+                }
+            });
+        }
+
+
+
 
     public void initializeViews() {
         advancedSearchLayout = (LinearLayout) findViewById(R.id.advancedSearchLayoutID);
@@ -77,6 +100,11 @@ public class Info extends AppCompatActivity {
         asb.setVisibility(View.GONE);
         sb2.setVisibility(View.VISIBLE);
 
+    }
+
+    public void toMyPlaces (View view) {
+        Intent intent = new Intent(Info.this, MyPlaces.class);
+        startActivity(intent);
     }
 
     public void search(View view) {
@@ -114,4 +142,5 @@ public class Info extends AppCompatActivity {
             startActivity(intent);
         }
     }
+
 }
