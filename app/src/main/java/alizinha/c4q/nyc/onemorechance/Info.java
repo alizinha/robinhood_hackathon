@@ -28,7 +28,6 @@ public class Info extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info);
 
-
         initializeViews();
 
         isSpanish = getIntent().getFlags() == 1;
@@ -49,9 +48,7 @@ public class Info extends AppCompatActivity {
             citizenStatus.setText("Status Migratorio");
 
         }
-
     }
-
 
     public void initializeViews() {
         advancedSearchLayout = (LinearLayout) findViewById(R.id.advancedSearchLayoutID);

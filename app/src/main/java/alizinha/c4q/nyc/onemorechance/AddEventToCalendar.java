@@ -46,9 +46,6 @@ public class AddEventToCalendar extends ActionBarActivity {
             mEditTextNewEvent.setText("Añadir Evento");
         }
 
-
-
-
         mButtonSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
