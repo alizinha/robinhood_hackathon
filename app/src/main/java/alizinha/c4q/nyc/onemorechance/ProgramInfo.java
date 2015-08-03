@@ -11,6 +11,8 @@ import android.widget.TextView;
 import com.memetix.mst.language.Language;
 import com.memetix.mst.translate.Translate;
 
+import org.apache.http.protocol.HTTP;
+
 
 public class ProgramInfo extends ActionBarActivity {
     boolean isSpanish = false;
@@ -78,11 +80,23 @@ public class ProgramInfo extends ActionBarActivity {
                 if (isSpanish) {
                     intent.setFlags(1);
                     startActivity(intent);
-                }else {
+                } else {
                     startActivity(intent);
                 }
             }
         });
+    }
+
+    public void giveFeedbackOnAppointment(View v) {
+        Intent emailIntent = new Intent(Intent.ACTION_SEND);
+        // The intent does not have a URI, so declare the "text/plain" MIME type
+        emailIntent.setType(HTTP.PLAIN_TEXT_TYPE);
+        emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{"support@auntbertha.com"}); // recipients
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Change Request C4Q");
+        emailIntent.putExtra(Intent.EXTRA_TEXT, "If you'd like to give feedback on a particular service, please write \n" +
+                "their name and give a rating between one (worst) and five (best) stars. If you found any wrong information \n" +
+                "in our app as to when a location is open, etc., please provide that feedback here. Thank you.");
+        startActivity(emailIntent);
     }
 
     public void bookAppointment(View v) {
@@ -90,6 +104,7 @@ public class ProgramInfo extends ActionBarActivity {
         startActivity(intent);
 
     }
+
 
     class MyAsyncTask extends AsyncTask<Void, Integer, Boolean> {
         @Override
@@ -99,7 +114,7 @@ public class ProgramInfo extends ActionBarActivity {
             try {
                 textSpanish = Translate.execute(mDescription.getText().toString(), Language.ENGLISH, Language.SPANISH);
 
-            } catch(Exception e) {
+            } catch (Exception e) {
                 textSpanish = e.toString();
             }
             return true;

@@ -1,9 +1,7 @@
 package alizinha.c4q.nyc.onemorechance;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.support.v7.app.ActionBarActivity;
 import android.widget.TextView;
 
 
@@ -23,7 +21,7 @@ public class BiographyClass extends ActionBarActivity {
 
         if (isSpanish) {
             mTextViewBio.setText(R.string.spanol_bio_elvis);
-        }else {
+        } else {
             mTextViewBio.setText(R.string.bio_elvis);
         }
     }

@@ -10,8 +10,9 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-import org.apache.http.protocol.HTTP;
+
 import java.util.ArrayList;
+
 import retrofit.Callback;
 import retrofit.RestAdapter;
 import retrofit.RetrofitError;
@@ -64,9 +65,7 @@ public class SearchResults extends ActionBarActivity {
 
         lv = (ListView) findViewById(R.id.list_item);
 
-
         loadSearchResults();
-
 
     }
 
@@ -75,7 +74,6 @@ public class SearchResults extends ActionBarActivity {
         Log.v("Tags", zipCode);
 
         service.getProgramByZipcode(zipCode, API_KEY, "mentoring,ged/high-school%20equivalency", 0, 10, new Callback<APIData>() {
-
 
             @Override
             public void success(final APIData apiData, Response response) {
@@ -96,9 +94,7 @@ public class SearchResults extends ActionBarActivity {
                     offices[i] = o;
                 }
 
-
                 CustomAdapter adapter = new CustomAdapter(getApplicationContext(), R.layout.row, offices);
-
 
                 lv.setAdapter(adapter);
                 lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -114,7 +110,7 @@ public class SearchResults extends ActionBarActivity {
 
                         Intent intent = new Intent(SearchResults.this, ProgramInfo.class);
 
-                        if(isSpanish) {
+                        if (isSpanish) {
                             intent.putExtra("description", description);
                             intent.putExtra("title", title);
                             intent.putExtra("address", address);
@@ -123,7 +119,7 @@ public class SearchResults extends ActionBarActivity {
                             intent.setFlags(1);
                             startActivity(intent);
 
-                        }else {
+                        } else {
                             intent.putExtra("description", description);
                             intent.putExtra("title", title);
                             intent.putExtra("address", address);
@@ -143,23 +139,4 @@ public class SearchResults extends ActionBarActivity {
             }
         });
     }
-
-
-    public void bookAppointment(View v) {
-        Intent intent = new Intent(SearchResults.this, AddEventToCalendar.class);
-        startActivity(intent);
-    }
-
-    public void giveFeedbackOnAppointment(View v) {
-        Intent emailIntent = new Intent(Intent.ACTION_SEND);
-// The intent does not have a URI, so declare the "text/plain" MIME type
-        emailIntent.setType(HTTP.PLAIN_TEXT_TYPE);
-        emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{"support@auntbertha.com"}); // recipients
-        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Change Request C4Q");
-        emailIntent.putExtra(Intent.EXTRA_TEXT, "If you'd like to give feedback on a particular service, please write \n" +
-                "their name and give a rating between one (worst) and five (best) stars. If you found any wrong information \n" +
-                "in our app as to when a location is open, etc., please provide that feedback here. Thank you.");
-        startActivity(emailIntent);
-    }
-
 }

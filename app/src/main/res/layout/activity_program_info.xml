@@ -33,9 +33,9 @@
 
         <TextView
             android:id="@+id/url"
-            android:autoLink="web"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:autoLink="web"
             android:text="http://www.yahoo.com"
             android:textColor="#000000" />
 
@@ -50,15 +50,14 @@
             android:id="@+id/phone_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#000000"
-            android:autoLink="phone"/>
+            android:autoLink="phone"
+            android:textColor="#000000" />
 
 
         <TextView
             android:id="@+id/description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="15sp"
             android:text="@string/description"
             android:textColor="#ffffff"
             android:paddingTop="15dp"/>
@@ -68,37 +67,54 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="services"
-            android:textSize="15sp"
-            android:textColor="#ffffff" />
+            android:textColor="#ffffff"
+            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/hours"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="hours"
-            android:textSize="15sp"
-            android:textColor="#ffffff" />
+            android:textColor="#ffffff"
+            android:textSize="15sp" />
 
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/appointment_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:src="@drawable/appointment"
-            app:elevation="6dp"
-            app:pressedTranslationZ="12dp"
-            app:rippleColor="@android:color/white"
-            app:backgroundTint="#808080"
-            app:borderWidth="0dp"
-            android:onClick="bookAppointment"
-            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:gravity="center_horizontal|end"
+            android:paddingEnd="15dp">
 
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/appointment_button"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:onClick="bookAppointment"
+                android:src="@drawable/appointment"
+                app:backgroundTint="#808080"
+                app:borderWidth="0dp"
+                app:elevation="6dp"
+                app:pressedTranslationZ="12dp"
+                app:rippleColor="@android:color/white" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/survey_button"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:onClick="giveFeedbackOnAppointment"
+                app:backgroundTint="#808080"
+                app:borderWidth="0dp"
+                app:elevation="6dp"
+                app:pressedTranslationZ="12dp"
+                app:rippleColor="@android:color/white"
+                android:src="@drawable/star"/>
+
+        </LinearLayout>
 
         <Button
+            android:id="@+id/button_bio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/button_bio"
-            android:text="Biographies"/>
+            android:text="Biographies" />
 
     </LinearLayout>
 

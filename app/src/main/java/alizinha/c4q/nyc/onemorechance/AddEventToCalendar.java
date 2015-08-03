@@ -1,9 +1,9 @@
 package alizinha.c4q.nyc.onemorechance;
 
-import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
 import android.content.Intent;
+import android.os.Bundle;
 import android.provider.CalendarContract;
+import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,6 +23,9 @@ public class AddEventToCalendar extends ActionBarActivity {
     private String getTitle;
     private String getLocation;
     private String getDescription;
+    private EditText mNewTitle;
+    private EditText mNewLocation;
+    private EditText mNewDescription;
     boolean isSpanish = false;
 
     @Override
@@ -34,14 +37,15 @@ public class AddEventToCalendar extends ActionBarActivity {
 
         mButtonSubmit = (Button) findViewById(R.id.submit);
         mEditTextNewTitle = (TextView) findViewById(R.id.title);
-        mEditTextNewLocation = (TextView) findViewById(R.id.location_title);
-        mEditTextDescription = (TextView) findViewById(R.id.description_spanol);
-        mEditTextNewEvent = (TextView)findViewById(R.id.evento);
+        mEditTextNewEvent = (TextView) findViewById(R.id.evento);
+        mNewTitle = (EditText) findViewById(R.id.newTitle);
+        mNewLocation = (EditText) findViewById(R.id.newLocation);
+        mNewDescription = (EditText) findViewById(R.id.newDescription);
 
-        if(isSpanish) {
-            mEditTextNewTitle.setText("Titulo de Nuevo Evento");
-            mEditTextNewLocation.setText("Ubicación");
-            mEditTextDescription.setText("Descripción");
+        if (isSpanish) {
+            mNewTitle.setHint("Titulo de Nuevo Evento");
+            mNewLocation.setHint("Ubicación");
+            mNewDescription.setHint("Descripción");
             mButtonSubmit.setText("Crear Evento");
             mEditTextNewEvent.setText("Añadir Evento");
         }
@@ -50,22 +54,22 @@ public class AddEventToCalendar extends ActionBarActivity {
             @Override
             public void onClick(View v) {
 
-                if (mEditTextNewTitle.getText() != null) {
-                    getTitle = mEditTextNewTitle.getText().toString();
+                if (mNewTitle.getText() != null) {
+                    getTitle = mNewTitle.getText().toString();
                 } else {
                     getTitle = "";
                 }
 
 
-                if (mEditTextNewLocation.getText() != null) {
-                    getLocation = mEditTextNewLocation.getText().toString();
+                if (mNewLocation.getText() != null) {
+                    getLocation = mNewLocation.getText().toString();
                 } else {
                     getLocation = "";
                 }
 
 
-                if (mEditTextDescription.getText() != null) {
-                    getDescription = mEditTextDescription.getText().toString();
+                if (mNewDescription.getText() != null) {
+                    getDescription = mNewDescription.getText().toString();
                 } else {
                     getDescription = "";
                 }
