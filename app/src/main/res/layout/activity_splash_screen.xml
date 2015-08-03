@@ -28,26 +28,25 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
+        android:orientation="horizontal">
 
         <ImageView
             android:layout_width="0dp"
             android:layout_height="80dp"
-            android:src="@drawable/robinhood"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:src="@drawable/robinhood" />
 
         <ImageView
             android:layout_width="0dp"
             android:layout_height="80dp"
-            android:src="@drawable/auntbertha"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:src="@drawable/auntbertha" />
 
         <ImageView
             android:layout_width="0dp"
             android:layout_height="80dp"
-            android:src="@drawable/singlestop"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:src="@drawable/singlestop" />
 
     </LinearLayout>
 

@@ -1,7 +1,6 @@
 package alizinha.c4q.nyc.onemorechance;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -13,15 +12,14 @@ import android.widget.TextView;
 
 
 public class Info extends AppCompatActivity {
+
     LinearLayout advancedSearchLayout;
     EditText nameEditText, zipcodeEditText, age;
     String nameString, zipcodeString, ageString, immigrationStatus;
     CheckBox undocumented, immigrants, refugee, latinoYes, latinoNo, english, spanish, both;
     boolean isSpanish = false;
-    //Button search, advancedSearch;
     TextView preferredProgramLanguage, citizenStatus;
     FloatingActionButton sb, asb, sb2;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +34,7 @@ public class Info extends AppCompatActivity {
 
         if (isSpanish) {
 
-            age.setText("Edad");
+            age.setHint("Edad");
             zipcodeEditText.setHint("Codigo Postal");
             undocumented.setText("Indocumentado");
             immigrants.setText("Inmigrante");
@@ -46,6 +44,9 @@ public class Info extends AppCompatActivity {
             //advancedSearch.setText("Busqueda Avanzada");
             preferredProgramLanguage.setText("Preferencia de Lenguaje");
             citizenStatus.setText("Status Migratorio");
+            english.setText("Ingles");
+            spanish.setText("Español");
+            both.setText("Ambos");
 
         }
     }
@@ -81,28 +82,27 @@ public class Info extends AppCompatActivity {
     public void search(View view) {
 
         zipcodeString = zipcodeEditText.getText().toString();
-        ageString = age.getText().toString();
-
-        SharedPreferences info;
-        info = Info.this.getSharedPreferences("PREFS_NAME", 0);
-        SharedPreferences.Editor editor = info.edit();
-
-        editor.putString("name", nameString);
-        editor.putString("zipcode", zipcodeString);
-        editor.putString("age", ageString);
-
-
-        if (undocumented.isChecked() == true) {
-            immigrationStatus = "undocumented";
-        } else if (immigrants.isChecked() == true) {
-            immigrationStatus = "immigrant";
-        } else {
-            immigrationStatus = "refugee";
-        }
-
-        editor.putString("immigrationStatus", immigrationStatus);
-        editor.commit();
-
+//        ageString = age.getText().toString();
+//
+//        SharedPreferences info;
+//        info = Info.this.getSharedPreferences("PREFS_NAME", 0);
+//        SharedPreferences.Editor editor = info.edit();
+//
+//        editor.putString("name", nameString);
+//        editor.putString("zipcode", zipcodeString);
+//        editor.putString("age", ageString);
+//
+//
+//        if (undocumented.isChecked() == true) {
+//            immigrationStatus = "undocumented";
+//        } else if (immigrants.isChecked() == true) {
+//            immigrationStatus = "immigrant";
+//        } else {
+//            immigrationStatus = "refugee";
+//        }
+//
+//        editor.putString("immigrationStatus", immigrationStatus);
+//        editor.commit();
 
         Intent intent = new Intent(Info.this, SearchResults.class);
         if (isSpanish) {
@@ -113,7 +113,5 @@ public class Info extends AppCompatActivity {
             intent.putExtra("zipcode", zipcodeString);
             startActivity(intent);
         }
-
     }
-
 }

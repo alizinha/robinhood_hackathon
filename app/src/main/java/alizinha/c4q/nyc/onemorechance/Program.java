@@ -14,5 +14,4 @@ public class Program {
 
     @SerializedName("website_url")
     public String website;
-
 }
