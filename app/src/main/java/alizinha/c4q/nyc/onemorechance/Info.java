@@ -3,6 +3,7 @@ package alizinha.c4q.nyc.onemorechance;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.CheckBox;
@@ -19,6 +20,7 @@ public class Info extends AppCompatActivity {
     boolean isSpanish = false;
     //Button search, advancedSearch;
     TextView preferredProgramLanguage, citizenStatus;
+    FloatingActionButton sb, asb, sb2;
 
 
     @Override
@@ -63,27 +65,24 @@ public class Info extends AppCompatActivity {
         english = (CheckBox) findViewById(R.id.englishID);
         spanish = (CheckBox) findViewById(R.id.spanishID);
         both = (CheckBox) findViewById(R.id.bothID);
-        //search = (Button) findViewById(R.id.searchButtonID);
-        //advancedSearch = (Button) findViewById(R.id.advancedSearchButtonID);
         preferredProgramLanguage = (TextView) findViewById(R.id.preferredProgramLanguageID);
         citizenStatus = (TextView) findViewById(R.id.citizenStatusID);
+        sb = (FloatingActionButton) findViewById(R.id.searchButtonID);
+        asb = (FloatingActionButton) findViewById(R.id.advancedSearchButtonID);
+        sb2 = (FloatingActionButton) findViewById(R.id.searchButtonID2);
 
     }
 
     public void advancedSearch(View view) {
         advancedSearchLayout.setVisibility(View.VISIBLE);
+        sb.setVisibility(View.GONE);
+        asb.setVisibility(View.GONE);
+        sb2.setVisibility(View.VISIBLE);
 
     }
 
     public void search(View view) {
 
-        if (undocumented.isChecked()){
-            String is = "ud";
-
-
-        }
-
-        //nameString = nameEditText.getText().toString();
         zipcodeString = zipcodeEditText.getText().toString();
         ageString = age.getText().toString();
 

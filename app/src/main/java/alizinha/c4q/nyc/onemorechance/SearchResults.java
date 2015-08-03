@@ -45,7 +45,7 @@ public class SearchResults extends ActionBarActivity {
         mButtonNewSearch = (Button) findViewById(R.id.button_new_search);
 
         if (isSpanish) {
-            mTextViewSearchResults.setText("Resultados Encontrados");
+            mTextViewSearchResults.setText("Resultados");
             mButtonNewSearch.setText("Nueva Busqueda");
         }
 
