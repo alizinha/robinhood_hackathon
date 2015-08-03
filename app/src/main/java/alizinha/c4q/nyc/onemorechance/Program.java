@@ -1,5 +1,7 @@
 package alizinha.c4q.nyc.onemorechance;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.ArrayList;
 
 /**
@@ -8,5 +10,9 @@ import java.util.ArrayList;
 public class Program {
 
     public ArrayList<Office> offices;
+    public String description;
+
+    @SerializedName("website_url")
+    public String website;
 
 }
