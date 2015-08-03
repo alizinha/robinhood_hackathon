@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#33D633"
+    android:background="#FF2D9C2D"
     android:orientation="vertical">
 
     <ImageView
@@ -10,7 +10,7 @@
         android:layout_width="350dp"
         android:layout_height="350dp"
         android:layout_gravity="center"
-        android:src="@drawable/omclogo" />
+        android:src="@drawable/omclogo2" />
 
     <TextView
         android:layout_width="fill_parent"

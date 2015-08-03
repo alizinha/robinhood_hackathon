@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#33D633"
+    android:background="#FF2D9C2D"
     android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -60,7 +60,7 @@
             android:layout_height="wrap_content"
             android:text="@string/description"
             android:textColor="#ffffff"
-            android:textSize="15sp" />
+            android:paddingTop="15dp"/>
 
         <TextView
             android:id="@+id/services"
@@ -80,13 +80,14 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="70dp"
+            android:gravity="center_horizontal|end"
+            android:paddingEnd="15dp">
 
             <android.support.design.widget.FloatingActionButton
                 android:id="@+id/appointment_button"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
+                android:layout_height="60dp"
                 android:onClick="bookAppointment"
                 android:src="@drawable/appointment"
                 app:backgroundTint="#808080"
@@ -98,14 +99,14 @@
             <android.support.design.widget.FloatingActionButton
                 android:id="@+id/survey_button"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
+                android:layout_height="60dp"
                 android:onClick="giveFeedbackOnAppointment"
                 app:backgroundTint="#808080"
                 app:borderWidth="0dp"
                 app:elevation="6dp"
                 app:pressedTranslationZ="12dp"
-                app:rippleColor="@android:color/white" />
+                app:rippleColor="@android:color/white"
+                android:src="@drawable/star"/>
 
         </LinearLayout>
 
