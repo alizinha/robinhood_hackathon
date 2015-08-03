@@ -83,8 +83,6 @@ public class Info extends AppCompatActivity {
 
     public void search(View view) {
 
-
-
         zipcodeString = zipcodeEditText.getText().toString();
         ageString = age.getText().toString();
 
