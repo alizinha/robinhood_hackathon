@@ -17,12 +17,13 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/omclogo"
         android:label="@string/app_name"
         android:theme="@style/Theme.AppCompat.NoActionBar" >
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name" />
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Info"
             android:label="@string/title_activity_info"
@@ -41,7 +42,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".SplashScreen"
-            android:label="@string/title_activity_splash_screen"
+            android:label="One More Chance"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Black.NoTitleBar" >
             <intent-filter>
