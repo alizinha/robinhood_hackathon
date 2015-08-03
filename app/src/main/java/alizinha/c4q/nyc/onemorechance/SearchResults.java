@@ -76,13 +76,6 @@ public class SearchResults extends ActionBarActivity {
                     startActivity(emailIntent);
                 }
 
-//                Intent intent = new Intent(SearchResults.this, AddEventToCalendar.class);
-//                if (isSpanish){
-//                    intent.setFlags(1);
-//                    startActivity(intent);
-//                }else {
-//                    startActivity(intent);
-//                }
             }
         });
 
@@ -101,10 +94,6 @@ public class SearchResults extends ActionBarActivity {
         });
 
 
-
-
-
-
         lv = (ListView) findViewById(R.id.list_item);
 
         List<String> your_array_list = new ArrayList<String>();
@@ -120,13 +109,4 @@ public class SearchResults extends ActionBarActivity {
         lv.setAdapter(arrayAdapter);
     }
 
-
-    public void bookAppointment(View v) {
-        Intent intent = new Intent(SearchResults.this, AddEventToCalendar.class);
-        startActivity(intent);
-    }
-
-    public void giveFeedbackOnAppointment(View v) {
-
-    }
 }
