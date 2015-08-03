@@ -8,7 +8,30 @@
     <string name="title_activity_search_results">SearchResults</string>
     <string name="title_activity_add_event_to_calendar">AddEventToCalendar</string>
     <string name="title_activity_program_info">ProgramInfo</string>
-    <string name="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean viverra, velit eget finibus faucibus, enim nisi dignissim elit, sit amet vestibulum nibh diam eu nunc. Etiam quam justo, semper sed sem et, luctus malesuada lorem. Nam tincidunt velit egestas neque suscipit hendrerit. Mauris iaculis et lorem et scelerisque. Nam porttitor vel mi ac volutpat. Aliquam a enim ac dui aliquam molestie id laoreet mi. Suspendisse rutrum lorem erat, tempor ultricies lorem lacinia quis. Proin id iaculis purus, non vulputate felis. Ut a est eget metus iaculis euismod id vel dui.</string>
+    <string name="description">I have been alone with you inside my mind
+And in my dreams I have kissed your lips a thousand times
+I sometimes see you pass outside my door
+Hello, is it me you are looking for?
+
+I can see it in your eyes
+I can see it in your smile
+You are all I have ever wanted, and my arms are open wide
+because you know just what to say
+And you know just what to do
+And I want to tell you so much, I love you
+
+I long to see the sunlight in your hair
+And tell you time and time again how much I care
+Sometimes I feel my heart will overflow
+Hello, I have just got to let you know
+
+because I wonder where you are
+And I wonder what you do
+Are you somewhere feeling lonely, or is someone loving you?
+Tell me how to win your heart
+For I haven not got a clue
+But let me start by saying, I love you
+ </string>
     <string name="title_activity_practice">practice</string>
     <string name="name">Name</string>
     <string name="zip_code">Zip Code</string>
@@ -34,5 +57,31 @@
     <string name="search_result">Search Results</string>
     <string name="give_feedback_on_appointment">Give feedback on appointment</string>
     <string name="title_activity_splash_screen">SplashScreen</string>
+    <string name="title_activity_biography_class">BiographyClass</string>
+    <string name="bio_elvis">I was born in Brooklyn New York, but when I was a year old my mother
+        brought me to the Dominican Republic. I took the decision to come to United State when I was
+        20 years old. When I came here I did not know English at all, my aunt told me about a free
+        English class that they offered in a school near by where I used to live; from there I went
+        to college and started taking ESL classes; however, I had to wait for a whole year to take
+        financial aid because I was not a resident of New York City long enough to qualify for
+        Financial aid. I waste few months because I did not know anything of how the system work
+        here at the United State. I was not working at the time and my cousin told me to apply for
+        SNAP that way I could help my brother with at least the food. If it was not for my family I
+        would not know about the benefits of this country</string>
+
+    <string name="spanol_bio_elvis">
+        Yo nací en Brooklyn New York, pero cuando tenia un año de edad mi madre me llevo para la
+        República Dominicana. Yo tomé la decisión de venir para los Estados Unidos cuando tenía 20
+        años de edad. Cuando yo vine para este país no sabía nada de Ingles, mi tía me dijo de un
+        programa gratuito de Ingles en una escuela que estaba cerca de donde yo vivía; después de
+        ahi yo fui para la universidad donde empece a tomar clases de Ingles como Segunda Lengua;
+        sin embargo, yo tube que esperar un año completo para poder recibir la ayuda financiera
+        porque yo no era residente de la ciudad de Nueva York el tiempo requerido para calificar.
+        Yo desperdicie algunos meses porque no sabia nada de como funcionaba el sistema aquí en los
+        Estados Unidos. No estaba trabajando cuando recién llegue y un primo me dijo que aplicara
+        para los cupones de comida, de esa manera podría ayudar a mi hermano por lo menos con la
+        comida. Si no hubiese sido por mi familia nunca hubiese sabido acerca de los beneficios de
+        este país. </string>
+
 
 </resources>

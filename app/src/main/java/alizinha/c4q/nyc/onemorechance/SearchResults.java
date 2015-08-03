@@ -113,15 +113,26 @@ public class SearchResults extends ActionBarActivity {
                                 + apiData.programs.get(i).offices.get(0).state;
 
                         Intent intent = new Intent(SearchResults.this, ProgramInfo.class);
-                        intent.putExtra("description", description);
-                        intent.putExtra("title", title);
-                        intent.putExtra("address", address);
-                        intent.putExtra("phone_number", phoneNumber);
-                        intent.putExtra("website", website);
-                        startActivity(intent);
+
+                        if(isSpanish) {
+                            intent.putExtra("description", description);
+                            intent.putExtra("title", title);
+                            intent.putExtra("address", address);
+                            intent.putExtra("phone_number", phoneNumber);
+                            intent.putExtra("website", website);
+                            intent.setFlags(1);
+                            startActivity(intent);
+
+                        }else {
+                            intent.putExtra("description", description);
+                            intent.putExtra("title", title);
+                            intent.putExtra("address", address);
+                            intent.putExtra("phone_number", phoneNumber);
+                            intent.putExtra("website", website);
+                            startActivity(intent);
+                        }
                     }
                 });
-
             }
 
             @Override
