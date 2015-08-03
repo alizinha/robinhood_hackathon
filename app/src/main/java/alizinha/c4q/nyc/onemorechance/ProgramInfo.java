@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.memetix.mst.language.Language;
@@ -14,17 +15,20 @@ import com.memetix.mst.translate.Translate;
 public class ProgramInfo extends ActionBarActivity {
     boolean isSpanish = false;
 
-      private TextView mDescription;
-      private TextView mTitle;
-      private TextView mAddress;
-      private TextView mPhoneNumber;
-      private TextView mWebsite;
-      private String description;
-      private String title;
-      private String address;
-      private String phoneNumber;
-      private String website;
-    String textSpanish;
+    private TextView mDescription;
+    private TextView mTitle;
+    private TextView mAddress;
+    private TextView mPhoneNumber;
+    private TextView mWebsite;
+
+    private Button mButtonBio;
+
+    private String description;
+    private String title;
+    private String address;
+    private String phoneNumber;
+    private String website;
+    private String textSpanish;
 
 
     @Override
@@ -41,7 +45,7 @@ public class ProgramInfo extends ActionBarActivity {
         website = getIntent().getStringExtra("website");
 
 
-
+        mButtonBio = (Button) findViewById(R.id.button_bio);
         mWebsite = (TextView) findViewById(R.id.url);
         mPhoneNumber = (TextView) findViewById(R.id.phone_number);
         mDescription = (TextView) findViewById(R.id.description);
@@ -56,6 +60,9 @@ public class ProgramInfo extends ActionBarActivity {
         mDescription.setText(description);
 
         if (isSpanish) {
+
+            mButtonBio.setText("Biografia");
+
             new MyAsyncTask() {
                 protected void onPostExecute(Boolean result) {
 
@@ -63,12 +70,25 @@ public class ProgramInfo extends ActionBarActivity {
                 }
             }.execute();
         }
+
+        mButtonBio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ProgramInfo.this, BiographyClass.class);
+                if (isSpanish) {
+                    intent.setFlags(1);
+                    startActivity(intent);
+                }else {
+                    startActivity(intent);
+                }
+            }
+        });
     }
 
     public void bookAppointment(View v) {
         Intent intent = new Intent(ProgramInfo.this, AddEventToCalendar.class);
-        intent.setFlags(1);
         startActivity(intent);
+
     }
 
     class MyAsyncTask extends AsyncTask<Void, Integer, Boolean> {
