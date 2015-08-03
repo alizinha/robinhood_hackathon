@@ -56,7 +56,7 @@ public class ProgramInfo extends ActionBarActivity {
 
         mDescription.setText(description);
 
-       
+
     }
 
     public void giveFeedbackOnAppointment(View v) {

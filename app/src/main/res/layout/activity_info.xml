@@ -11,6 +11,25 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="alizinha.c4q.nyc.onemorechance.Info">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bios"
+            android:id="@+id/button_bio"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Places I've Been"
+            android:id="@+id/button_places"
+            android:onClick="toMyPlaces"/>
+
+        </LinearLayout>
+
 
     <EditText
         android:id="@+id/zipcodeID"
@@ -26,18 +45,7 @@
         android:layout_gravity="right"
         android:orientation="horizontal">
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Bios"
-            android:id="@+id/button_bio"/>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Places I've Been"
-            android:id="@+id/button_places"
-            android:onClick="toMyPlaces"/>
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/advancedSearchButtonID"
