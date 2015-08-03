@@ -7,6 +7,7 @@ import android.provider.CalendarContract;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 /**
  * Created by Allison Bojarski on 8/1/15.
@@ -15,9 +16,10 @@ import android.widget.EditText;
 
 public class AddEventToCalendar extends ActionBarActivity {
     private Button mButtonSubmit;
-    private EditText mEditTextNewTitle;
-    private EditText mEditTextNewLocation;
-    private EditText mEditTextDescription;
+    private TextView mEditTextNewTitle;
+    private TextView mEditTextNewLocation;
+    private TextView mEditTextDescription;
+    private TextView mEditTextNewEvent;
     private String getTitle;
     private String getLocation;
     private String getDescription;
@@ -31,15 +33,17 @@ public class AddEventToCalendar extends ActionBarActivity {
         isSpanish = getIntent().getFlags() == 1;
 
         mButtonSubmit = (Button) findViewById(R.id.submit);
-        mEditTextNewTitle = (EditText) findViewById(R.id.newTitle);
-        mEditTextNewLocation = (EditText) findViewById(R.id.newLocation);
-        mEditTextDescription = (EditText) findViewById(R.id.newDescription);
+        mEditTextNewTitle = (TextView) findViewById(R.id.title);
+        mEditTextNewLocation = (TextView) findViewById(R.id.location_title);
+        mEditTextDescription = (TextView) findViewById(R.id.description_spanol);
+        mEditTextNewEvent = (TextView)findViewById(R.id.evento);
 
         if(isSpanish) {
-            mEditTextNewTitle.setHint("Titulo de Nuevo Evento");
-            mEditTextNewLocation.setHint("Ubicación");
-            mEditTextDescription.setHint("Descripción");
+            mEditTextNewTitle.setText("Titulo de Nuevo Evento");
+            mEditTextNewLocation.setText("Ubicación");
+            mEditTextDescription.setText("Descripción");
             mButtonSubmit.setText("Crear Evento");
+            mEditTextNewEvent.setText("Añadir Evento");
         }
 
 

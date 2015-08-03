@@ -18,7 +18,7 @@
 
         <TextView
             android:id="@+id/titleID"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="Title"
             android:textColor="#ffffff"
@@ -37,7 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="http://www.yahoo.com"
-            android:textColor="#ffffff" />
+            android:textColor="#000000" />
 
         <TextView
             android:id="@+id/language"
@@ -50,7 +50,7 @@
             android:id="@+id/phone_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#ffffff"
+            android:textColor="#000000"
             android:autoLink="phone"/>
 
 
@@ -58,6 +58,7 @@
             android:id="@+id/description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="15sp"
             android:text="@string/description"
             android:textColor="#ffffff" />
 
@@ -66,6 +67,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="services"
+            android:textSize="15sp"
             android:textColor="#ffffff" />
 
         <TextView
@@ -73,6 +75,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="hours"
+            android:textSize="15sp"
             android:textColor="#ffffff" />
 
         <android.support.design.widget.FloatingActionButton
