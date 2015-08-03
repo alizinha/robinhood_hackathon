@@ -23,7 +23,7 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Info"
             android:label="@string/title_activity_info"
@@ -54,6 +54,10 @@
         <activity
             android:name=".BiographyClass"
             android:label="@string/title_activity_biography_class" >
+        </activity>
+        <activity
+            android:name=".MyPlaces"
+            android:label="@string/title_activity_my_places" >
         </activity>
     </application>
 

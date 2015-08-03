@@ -26,6 +26,19 @@
         android:layout_gravity="right"
         android:orientation="horizontal">
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bios"
+            android:id="@+id/button_bio"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Places I've Been"
+            android:id="@+id/button_places"
+            android:onClick="toMyPlaces"/>
+
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/advancedSearchButtonID"
             android:layout_width="0dp"

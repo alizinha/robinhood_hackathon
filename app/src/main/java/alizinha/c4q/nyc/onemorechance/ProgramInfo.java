@@ -5,7 +5,6 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import com.memetix.mst.language.Language;
@@ -22,9 +21,6 @@ public class ProgramInfo extends ActionBarActivity {
     private TextView mAddress;
     private TextView mPhoneNumber;
     private TextView mWebsite;
-
-    private Button mButtonBio;
-
     private String description;
     private String title;
     private String address;
@@ -47,7 +43,6 @@ public class ProgramInfo extends ActionBarActivity {
         website = getIntent().getStringExtra("website");
 
 
-        mButtonBio = (Button) findViewById(R.id.button_bio);
         mWebsite = (TextView) findViewById(R.id.url);
         mPhoneNumber = (TextView) findViewById(R.id.phone_number);
         mDescription = (TextView) findViewById(R.id.description);
@@ -61,30 +56,7 @@ public class ProgramInfo extends ActionBarActivity {
 
         mDescription.setText(description);
 
-        if (isSpanish) {
-
-            mButtonBio.setText("Biografia");
-
-            new MyAsyncTask() {
-                protected void onPostExecute(Boolean result) {
-
-                    mDescription.setText(textSpanish);
-                }
-            }.execute();
-        }
-
-        mButtonBio.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ProgramInfo.this, BiographyClass.class);
-                if (isSpanish) {
-                    intent.setFlags(1);
-                    startActivity(intent);
-                } else {
-                    startActivity(intent);
-                }
-            }
-        });
+       
     }
 
     public void giveFeedbackOnAppointment(View v) {
@@ -93,10 +65,20 @@ public class ProgramInfo extends ActionBarActivity {
         emailIntent.setType(HTTP.PLAIN_TEXT_TYPE);
         emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{"support@auntbertha.com"}); // recipients
         emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Change Request C4Q");
-        emailIntent.putExtra(Intent.EXTRA_TEXT, "If you'd like to give feedback on a particular service, please write \n" +
-                "their name and give a rating between one (worst) and five (best) stars. If you found any wrong information \n" +
-                "in our app as to when a location is open, etc., please provide that feedback here. Thank you.");
-        startActivity(emailIntent);
+        if (isSpanish) {
+            emailIntent.putExtra(Intent.EXTRA_TEXT, "Me gustaría dar le una clasificación de (por favor entre un numero entre medio 1 pero y 5 mejor) ");
+            startActivity(emailIntent);
+        } else {
+            emailIntent.putExtra(Intent.EXTRA_TEXT, "If you'd like to give feedback on a particular service, please write \n" +
+                    "their name and give a rating between one (worst) and five (best) stars. If you found any wrong information \n" +
+                    "in our app as to when a location is open, etc., please provide that feedback here. Thank you.");
+
+            //I would like to give "(    )" a rating of "(please enter a number in-bewteen 1 (worst) and 5 (best))" If you found any wrong information
+            //in our app as to when a location is open, etc., please provide that feedback here. Thank you.");
+
+            startActivity(emailIntent);
+        }
+
     }
 
     public void bookAppointment(View v) {
