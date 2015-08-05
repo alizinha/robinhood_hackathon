@@ -15,13 +15,16 @@ public class BiographyClass extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_biography_class);
 
+
+
         isSpanish = getIntent().getFlags() == 1;
 
         mTextViewBio = (TextView) findViewById(R.id.bio_elvis);
 
         if (isSpanish) {
             mTextViewBio.setText(R.string.spanol_bio_elvis);
-        } else {
+        }
+        else {
             mTextViewBio.setText(R.string.bio_elvis);
         }
     }

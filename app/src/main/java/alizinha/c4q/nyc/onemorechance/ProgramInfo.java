@@ -56,6 +56,17 @@ public class ProgramInfo extends ActionBarActivity {
 
         mDescription.setText(description);
 
+        if (isSpanish) {
+
+
+            new MyAsyncTask() {
+                protected void onPostExecute(Boolean result) {
+
+                    mDescription.setText(textSpanish);
+                }
+            }.execute();
+        }
+
 
     }
 
@@ -66,7 +77,7 @@ public class ProgramInfo extends ActionBarActivity {
         emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{"support@auntbertha.com"}); // recipients
         emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Change Request C4Q");
         if (isSpanish) {
-            emailIntent.putExtra(Intent.EXTRA_TEXT, "Me gustaría dar le una clasificación de (por favor entre un numero entre medio 1 pero y 5 mejor) ");
+            emailIntent.putExtra(Intent.EXTRA_TEXT, "Si le gustaría darnos su opinión en algún servicio en particular, por favor escribir el nombre del servicio y darnos un grado entre 1  siendo el peor y 5 lo mejor. Si encuentra algún tipo de información errónea en nuestra aplicación, por favor de proveernos con su opinion aquí. Gracias." );
             startActivity(emailIntent);
         } else {
             emailIntent.putExtra(Intent.EXTRA_TEXT, "If you'd like to give feedback on a particular service, please write \n" +

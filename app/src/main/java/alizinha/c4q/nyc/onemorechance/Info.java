@@ -51,8 +51,10 @@ public class Info extends AppCompatActivity {
             english.setText("Ingles");
             spanish.setText("Español");
             both.setText("Ambos");
-            mButtonBio.setText("Biografias");
-            locations.setText("lugares Que He Visitado");
+            mButtonBio.setText("Historias de Exito");
+            locations.setText("lugares Visitados");
+
+
 
         }
 

@@ -13,12 +13,13 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:gravity="center">
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Bios"
+            android:text="Success Stories"
             android:id="@+id/button_bio"/>
 
         <Button
@@ -50,7 +51,7 @@
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/advancedSearchButtonID"
             android:layout_width="0dp"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:layout_weight="1"
             android:onClick="advancedSearch"
             android:src="@drawable/plus"
@@ -63,7 +64,7 @@
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/searchButtonID"
             android:layout_width="0dp"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:layout_weight="1"
             android:onClick="search"
             android:src="@drawable/search"
@@ -204,14 +205,14 @@
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="70dp"
-            android:layout_gravity="bottom|end">
+            android:layout_height="match_parent"
+           >
 
 
             <android.support.design.widget.FloatingActionButton
                 android:id="@+id/searchButtonID2"
                 android:layout_width="0dp"
-                android:layout_height="60dp"
+                android:layout_height="50dp"
                 android:layout_weight="1"
                 android:onClick="search"
                 android:src="@drawable/search"
